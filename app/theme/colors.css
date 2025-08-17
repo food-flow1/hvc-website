@@ -1,0 +1,101 @@
+@theme {
+  /*
+      Primitives
+    */
+
+  /* White */
+  --color-white-900: #5b6a59;
+  --color-white-800: #778b74;
+  --color-white-700: #9ab496;
+  --color-white-600: #c5e6c0;
+  --color-white-500: #d9fdd3;
+  --color-white-400: #e1fddc;
+  --color-white-300: #e6fee2;
+  --color-white-200: #eefeeb;
+  --color-white-100: #f3fef1;
+  --color-white-50: #fbfffb;
+
+  /* Gray */
+  --color-gray-900: #0b0b0b;
+  --color-gray-800: #0f0f0f;
+  --color-gray-700: #131313;
+  --color-gray-600: #191919;
+  --color-gray-500: #1b1b1b;
+  --color-gray-400: #494949;
+  --color-gray-300: #666666;
+  --color-gray-200: #969696;
+  --color-gray-100: #b8b8b8;
+  --color-gray-50: #e8e8e8;
+
+  /* Green */
+  --color-green-900: #1a6b3c;
+  --color-green-800: #238c4f;
+  --color-green-700: #2db566;
+  --color-green-600: #39e883;
+  --color-green-500: #3fff90;
+  --color-green-400: #65ffa6;
+  --color-green-300: #7effb5;
+  --color-green-200: #a7ffcc;
+  --color-green-100: #c3ffdd;
+  --color-green-50: #ecfff4;
+
+  /* Blue */
+  --color-blue-900: #00031c;
+  --color-blue-800: #000424;
+  --color-blue-700: #00062f;
+  --color-blue-600: #00073c;
+  --color-blue-500: #000842;
+  --color-blue-400: #333968;
+  --color-blue-300: #545a80;
+  --color-blue-200: #8a8da8;
+  --color-blue-100: #b0b2c4;
+  --color-blue-50: #e6e6ec;
+
+  /* Deep Green */
+  --color-deep-green-900: #082017;
+  --color-deep-green-800: #0b2a1e;
+  --color-deep-green-700: #0e3727;
+  --color-deep-green-600: #124632;
+  --color-deep-green-500: #144d37;
+  --color-deep-green-400: #43715f;
+  --color-deep-green-300: #628879;
+  --color-deep-green-200: #93ada3;
+  --color-deep-green-100: #b6c8c1;
+  --color-deep-green-50: #e8edeb;
+
+  /* Black */
+  --color-black-950: rgba(0, 0, 0, 1);
+  --color-black-900: rgba(0, 0, 0, 0.9);
+  --color-black-800: rgba(0, 0, 0, 0.8);
+  --color-black-700: rgba(0, 0, 0, 0.7);
+  --color-black-600: rgba(0, 0, 0, 0.6);
+  --color-black-500: rgba(0, 0, 0, 0.5);
+  --color-black-400: rgba(0, 0, 0, 0.4);
+  --color-black-300: rgba(0, 0, 0, 0.3);
+  --color-black-200: rgba(0, 0, 0, 0.2);
+  --color-black-100: rgba(0, 0, 0, 0.1);
+  --color-black-50: rgba(0, 0, 0, 0.05);
+  --color-black-25: rgba(0, 0, 0, 0);
+
+  --color-gradient-primary: linear-gradient(
+      0deg,
+      var(--color-violet-600),
+      var(--color-violet-600)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+  --color-gradient-primary-hover: linear-gradient(
+      0deg,
+      var(--color-violet-600),
+      var(--color-violet-600)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+}

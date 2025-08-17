@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+
 @import "tailwindcss";
 
 :root {
@@ -5,11 +7,15 @@
   --foreground: #171717;
 }
 
+* {
+  font-family: "Instrument", sans-serif;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-Instrument);
+  --font-mono: var(--font-sans-serif);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +25,103 @@
   }
 }
 
+@keyframes scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+
+  border-radius: 10px;
+  /* margin: 20px 0; */
+  position: relative;
+}
+
+.marquee-row {
+  display: flex;
+  align-items: center;
+  padding: 40px 0;
+  animation: 20s linear infinite;
+}
+
+.marquee-right {
+  animation-name: scroll-right;
+}
+
+.marquee-left {
+  animation-name: scroll-left;
+}
+
+/* .marquee-container:hover .marquee-row {
+  animation-play-state: paused;
+} */
+
+/* .logo-item {
+  height: 60px;
+  min-width: 120px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+} */
+
+.logo-item {
+  height: 60px;
+  width: auto;
+  max-width: 120px;
+  margin: 0 30px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.clip-slant1 {
+  clip-path: polygon(9% 0%, 100% 0%, 100% 100%, -17% 106%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.clip-slant2 {
+  clip-path: polygon(9% 0%, 100% 0%, 100% 100%, -17% 106%);
+}
+
+#contactTime {
+  color: #888888;
+}
+
+@media (max-width: 981px) {
+  .clip-slant1 {
+    clip-path: none;
+  }
+  .clip-slant2 {
+    clip-path: none;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
 }

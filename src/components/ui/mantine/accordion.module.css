@@ -1,0 +1,58 @@
+/* .control {
+  @apply hover:bg-inherit;
+} */
+
+.item {
+  display: flex;
+  flex-direction: column;
+  color: rgb(119, 118, 118);
+  font-weight: 700;
+  font-size: 16px;
+  padding-block: 16px;
+  /* border: none; */
+  /* border: 1px solid red; */
+  background: #f3f5f4;
+  border-radius: 12px;
+}
+
+.control {
+  /* padding-block: 24px; */
+  font-size: 18px;
+  font-weight: 600;
+  /* color: rgb(119, 118, 118);
+   */
+  background: transparent;
+  border: none;
+}
+
+.control:hover {
+  background: transparent;
+}
+
+.chevron {
+  font-size: 32px;
+  color: rgb(119, 118, 118);
+  color: #444444;
+  /* display: none; */
+}
+
+.label {
+  font-size: 19px;
+  color: #444444;
+  font-weight: 600;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  /* gap: 24px; */
+  /* color: rgb(119, 118, 118); */
+  font-size: 16px;
+  line-height: 1.6;
+  padding-left: 30px;
+  color: #444444;
+}
+
+.icon {
+  rotate: 180deg;
+}
