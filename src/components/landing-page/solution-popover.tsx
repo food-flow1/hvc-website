@@ -1,7 +1,6 @@
 import { Menu, Text } from "@mantine/core";
 import { IoMdArrowDropdown } from "react-icons/io";
 import Image from "next/image";
-
 import { GoDotFill } from "react-icons/go";
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
@@ -25,15 +24,18 @@ const dropList = [
 ];
 
 export default function SolutionPopover() {
-  const [opened, { toggle }] = useDisclosure(false);
+  const [opened, { toggle, close }] = useDisclosure(false);
+
+  const handleLinkClick = () => {
+    close();
+  };
+
   return (
     <Menu
       opened={opened}
       width="target"
       onChange={toggle}
       transitionProps={{ transition: "rotate-right", duration: 150 }}
-      // position="bottom-end"
-      // width={200}
       classNames={{
         dropdown:
           " bg-white rounded-lg bg-white   p-0 !rounded-lg !w-[500px] !shadow-[0_4px_8px_2px_rgba(0,0,0,0.1)]",
@@ -49,10 +51,10 @@ export default function SolutionPopover() {
       <Menu.Dropdown>
         <div className=" flex gap-[13px] bg-[#fff] py-5 px-[23px]  ">
           <Image src="/sections-image.png" alt="" width={199} height={242} />
-          <section className=" flex flex-col py-[26px] px-[16px] bg-[#FAFAFA] rounded-[4px] items-center justify-center gap-[35px] cursor-pointer  ">
+          <section className=" flex flex-col py-[26px] px-[16px] bg-[#FAFAFA] rounded-[4px] items-center justify-center gap-[30px] cursor-pointer  ">
             {dropList.map((item, idx) => (
-              <Link key={idx} href={item.link}>
-                <div className=" flex gap-[5px] w-[210px]  cursor-pointer ">
+              <Link key={idx} href={item.link} onClick={handleLinkClick}>
+                <div className=" flex gap-[5px] w-[210px]  cursor-pointer hover:shadow-sm px-1 py-1 rounded-md ">
                   <GoDotFill color="#9DC655" />
                   <article className=" flex flex-col gap-[2px]">
                     <p className=" text-[16px] font-semibold text-[#0A0A0A] leading-[20px]">
@@ -67,10 +69,6 @@ export default function SolutionPopover() {
             ))}
           </section>
         </div>
-
-        {/* <Menu.Label>Danger zone</Menu.Label>
-        <Menu.Item>Transfer my data</Menu.Item>
-        <Menu.Item>Delete my account</Menu.Item> */}
       </Menu.Dropdown>
     </Menu>
   );

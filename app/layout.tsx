@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import "@mantine/core/styles.layer.css";
-
-import localFont from "next/font/local";
-
 import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import { MantineProvider } from "@mantine/core";
 import { theme } from "@/src/components/ui/theme";
 import Header from "@/src/components/layout/header";
 import Footer from "@/src/components/layout/footer";
+import Script from "next/script";
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
@@ -29,6 +27,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-4S4GPFNQC2"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-4S4GPFNQC2');
+          `}
+        </Script>
+      </head>
       <body className={`${instrumentSans.variable}  antialiased`}>
         <MantineProvider theme={theme}>
           <main className="flex flex-col ">

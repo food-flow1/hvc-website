@@ -27,9 +27,9 @@ const SingleSolutionCard: React.FC<{
 }> = ({ benefit, iconSrc, iconAlt }) => (
   <section
     style={{ backgroundColor: benefit.containerBg }}
-    className="px-[25px] py-[27px] flex flex-col rounded-[14px] bg-[#2c361b]"
+    className="px-[clamp(10px,2vw,25px)] py-[clamp(20px,2vw,27px)] flex flex-col rounded-[clamp(10px,0.8vw,14px)] bg-[#2c361b]"
   >
-    <figure className="self-end">
+    <figure className="self-end w-[clamp(25px,4vw,50px]) h-[clamp(25px,4vw,50px]) ">
       <img src={iconSrc} alt={iconAlt} />
     </figure>
     <div className="flex flex-col gap-[8px]">

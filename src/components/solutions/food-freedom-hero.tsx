@@ -28,7 +28,7 @@ const items = [
 
 function FoodFreedomHero() {
   return (
-    <section className="flex px-[clamp(40px,4vw,80px)] py-[clamp(40px,4vw,80px)] items-center justify-center bg-[#141F01]">
+    <section className="flex px-[clamp(20px,4vw,80px)] py-[clamp(20px,4vw,80px)] items-center justify-center bg-[#141F01]">
       <section className="justify-between flex items-center max-w-7xl w-full gap-8 max-[666px]:flex-col  ">
         <div className={clsx("flex flex-col gap-1 flex-1")}>
           <article className="py-[7px] px-[11px] rounded-[8px] w-fit bg-[#353e26]">
@@ -37,7 +37,7 @@ function FoodFreedomHero() {
             </p>
           </article>
 
-          <div className="flex flex-col gap-[20px]">
+          <div className="flex flex-col gap-[clamp(12px,2vw,20px)]">
             <h3 className="leading-[clamp(35px,3vw,60px)] font-medium text-[clamp(20px,2vw,48px)] text-white">
               Sustainable Food Access for All
             </h3>

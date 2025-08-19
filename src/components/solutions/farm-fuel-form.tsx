@@ -82,7 +82,7 @@ function FarmFuelInterestForm() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fafafa] py-18 px-4">
+    <div className="min-h-screen bg-[#fafafa] py-[clamp(20px,3vw,72px)] px-4">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className=" flex flex-col gap-[11px] items-center">
@@ -96,39 +96,31 @@ function FarmFuelInterestForm() {
             </p>
           </article>
 
-          <h1 className="text-[40px] font-medium text-[#141414] text-center">
+          <h1 className="text-[clamp(25px,3vw,40px)] font-medium text-[#141414] text-center">
             Let us know how we can work together
           </h1>
-          {/* <p className=" text-[#000000] font-semibold text-34px]">
-            Farm Fuel Interest Form
-          </p> */}
         </div>
 
         {/* Form Card */}
-        <div className=" ">
-          <div className="rounded-[20px] p-6 mb-8 border border-[#EBEBEB] bg-white">
-            <h2 className="text-xl font-semibold text-gray-800 mb-3">
-              Farm Fuel Interest Form
-            </h2>
-            <p className="text-[#141414] text-[16px] italic font-medium">
-              FarmFuel by Harvest Value Chain Limited is more than just a
-              renewable energy solution—it’s a partnership to transform
-              agricultural waste into power, income, and sustainable farming
-              solutions. Fill out the form below to indicate your interest,
-              whether you’re a farmer, a potential partner, or simply passionate
-              about sustainable energy. Our team will reach out to discuss how
-              we can collaborate to create cleaner, more sustainable
-              communities. 
-            </p>
-            {/* <div className="mt-4 text-sm text-blue-700">
-              <a href="#" className="hover:underline">
-                Read our Terms & Conditions
-              </a>{" "}
-              •
-              <a href="#" className="hover:underline ml-2">
-                Read the full T&C
-              </a>
-            </div> */}
+        <div className="mt-8 ">
+          <div className="rounded-[20px] p-6 mb-[clamp(16px,2vw,32px)] border border-[#EBEBEB] bg-white relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-3 bg-gradient-to-r from-[#9DC655] to-[#7BA83F] rounded-t-[20px]"></div>
+
+            <div className="pt-2">
+              <h2 className="text-xl font-semibold text-gray-800 mb-3">
+                Farm Fuel Interest Form
+              </h2>
+              <p className="text-[#141414] text-[16px] italic font-medium">
+                FarmFuel by Harvest Value Chain Limited is more than just a
+                renewable energy solution—it’s a partnership to transform
+                agricultural waste into power, income, and sustainable farming
+                solutions. Fill out the form below to indicate your interest,
+                whether you’re a farmer, a potential partner, or simply
+                passionate about sustainable energy. Our team will reach out to
+                discuss how we can collaborate to create cleaner, more
+                sustainable communities. 
+              </p>
+            </div>
           </div>
 
           <div className="space-y-[10px]">
@@ -311,12 +303,11 @@ function FarmFuelInterestForm() {
               </label>
             </div>
 
-            {/* Submit Button */}
             <div className="flex justify-between items-center ">
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="bg-gradient-to-r from-[#008807] to-green-700 text-white font-medium py-3 px-6 rounded-lg hover:from-green-700 hover:to-green-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl w-fit"
+                className="bg-gradient-to-r from-[#008807] to-green-700 text-white font-medium py-[9px] px-[29px] rounded-lg hover:from-green-700 hover:to-green-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl w-fit"
               >
                 Submit
               </button>

@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@mantine/core";
+import Link from "next/link";
 import { HiArrowUpRight } from "react-icons/hi2";
 
 const missionList = [
@@ -19,7 +20,7 @@ const missionList = [
 
 function Mission() {
   return (
-    <main className=" px-[clamp(40px,5.5vw,80px)] py-[clamp(70px,10vw,155px)] flex items-center bg-[#fff] justify-center  ">
+    <main className=" px-[clamp(20px,5.5vw,80px)] py-[clamp(40px,10vw,155px)] flex items-center bg-[#fff] justify-center  ">
       <div
         className="  flex py-[clamp(20px,41vw,60px)] px-[clamp(20px,5.5vw,80px)] w-[1280px] h-[713px] "
         style={{
@@ -32,21 +33,24 @@ function Mission() {
         }}
       >
         <section className=" flex justify-between flex-col">
-          <div className=" flex gap-2 justify-end items-center">
+          <Link
+            href="/cooperatives"
+            className=" flex gap-2 justify-end items-center"
+          >
             <Button variant="secondary" size="lg">
               View products
             </Button>
             <article className=" flex items-center justify-center p-[6px] border border-[#000] rounded-[8px] w-[38px] h-[38px]">
               <HiArrowUpRight className=" cursor-pointer text-[#000]" />
             </article>
-          </div>
+          </Link>
 
           <section className=" flex flex-col gap-[44px]">
             {missionList.map(({ name, text, img }, idx) => (
               <div key={idx} className=" flex gap-4 items-center">
                 <article className=" bg-[#3d3e35] rounded-full p-2">
                   <figure
-                    className=" p-[clamp(10px,0.8vw,14px)] bg-white rounded-full w-[50px] h-[50px] items-center justify-center
+                    className=" p-[clamp(10px,0.8vw,14px)] bg-white rounded-full w-[50px] h-[50px] items-center justify-center flex
              "
                   >
                     <img src={img} />

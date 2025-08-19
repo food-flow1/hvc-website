@@ -39,16 +39,18 @@ function AboutHero() {
                 className="w-full h-auto rounded-[8px]"
               />
               {/* Overlay actions */}
-              <div className="absolute right-0 bottom-[10px] flex items-center gap-2  px-[7px] py-[8px] rounded-tl-[20px] rounded-bl-[20px] bg-[#141F01]">
-                <Link href="/solutions">
-                  <Button variant="secondary" size="sm">
-                    View solutions
-                  </Button>
-                </Link>
+              <Link
+                href="/solutions"
+                className="absolute right-0 bottom-[10px] flex items-center gap-2  px-[7px] py-[8px] rounded-tl-[20px] rounded-bl-[20px] bg-[#141F01] cursor-pointer"
+              >
+                <Button variant="secondary" size="lg" className="w-fit">
+                  View solutions
+                </Button>
+
                 <article className=" flex items-center justify-center p-[6px] border border-[#9DC655] rounded-[8px] w-[38px] h-[38px] max-[923px]:hidden">
                   <HiArrowUpRight className=" cursor-pointer" />
                 </article>
-              </div>
+              </Link>
             </figure>
           </div>
 
@@ -149,8 +151,8 @@ function AboutHero() {
                 className=" h-auto rounded-[8px]"
               />
 
-              <div className="absolute  right-[35px] bottom-[40px] flex items-center gap-2  px-[12px] py-[8px] rounded-tl-[20px] rounded-bl-[20px] bg-[#141F01]">
-                <Button variant="secondary" size="lg">
+              <div className="absolute  right-[0px] left-[336px] bottom-[40px] flex items-center gap-2  px-[12px] py-[8px] rounded-tl-[20px] rounded-bl-[20px] bg-[#141F01]">
+                <Button variant="secondary" size="lg-v">
                   View solutions
                 </Button>
                 <Link

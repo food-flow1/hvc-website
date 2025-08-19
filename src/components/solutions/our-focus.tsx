@@ -35,8 +35,8 @@ const benefits = [
 
 function OurFocus() {
   return (
-    <div className=" px-[clamp(35px,4vw,80px)] py-[61px] justify-center bg-white flex ">
-      <section className=" px-[clamp(25px,2.6vw,50px)] py-[clamp(35px,2vw,44px)] bg-[#141F01] flex flex-col gap-[40px] rounded-[30px]">
+    <div className=" px-[clamp(20px,4vw,80px)] py-[clamp(20px,3vw,61px)] justify-center bg-white flex ">
+      <section className=" px-[clamp(25px,2.6vw,50px)] py-[clamp(20px,2vw,44px)] bg-[#141F01] flex flex-col gap-[clamp(20px,3vw,40px)] rounded-[clamp(14px,3vw,30px)]">
         <TagLayout
           tag="We Contribute to the Sustainable Development Goals *SDG"
           tagColour="#fff"

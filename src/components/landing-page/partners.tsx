@@ -55,7 +55,7 @@ function Partner() {
 
   return (
     <section
-      className=" flex flex-col gap-[clamp(1rem,1.3vw,20px)] px-[clamp(30px,4.8vw,70px)] py-[clamp(25px,4.4vw,64px)] bg-white pb-[clamp(20px,4.0vw,60px)]"
+      className=" flex flex-col gap-[clamp(1rem,1.3vw,20px)] px-[clamp(20px,4.8vw,70px)] py-[clamp(25px,4.4vw,64px)] bg-white pb-[clamp(20px,4.0vw,60px)]"
       style={{
         backgroundImage: "url('/partners-bg.png')",
         backgroundSize: "cover",

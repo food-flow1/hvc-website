@@ -5,7 +5,7 @@ import clsx from "clsx";
 
 export default function WeDedicated() {
   return (
-    <section className="px-[clamp(30px,4.6vw,90px)] py-[clamp(48px,6.6vw,128px)] flex items-center justify-center bg-white">
+    <section className="px-[clamp(20px,4.6vw,90px)] py-[clamp(30px,6.6vw,128px)] flex items-center justify-center bg-white">
       <div className="flex gap-[7px] items-stretch justify-center max-[1032px]:w-full max-[1016px]:flex-col max-[1016px]:gap-4">
         <div
           className=" rounded-[24px] flex items-center justify-center flex-1 min-h-[clamp(330px,32vw,625px)] max-[1016px]:w-full max-[1016px]:h-[clamp(330px,40vw,400px)] max-[1016px]:rounded-none"

@@ -15,7 +15,7 @@ function Hero() {
     return () => clearInterval(interval);
   }, [images.length]);
   return (
-    <main className=" bg-[#141F01] py-[clamp(35px,6.2vw,90px)] flex flex-col gap-[clamp(25px,3.5vw,50px)] px-[clamp(30px,5.5vw,80px)]">
+    <main className=" bg-[#141F01] py-[clamp(30px,6.2vw,90px)] flex flex-col gap-[clamp(25px,3.5vw,50px)] px-[clamp(10px,5.5vw,80px)]">
       <section className=" flex flex-col gap-1">
         <article className=" px-[10px] py-[9px] flex items-center  bg-[#353e26] w-fit rounded-[8px]">
           <p>Welcome to Harvest Value Chain Ltd</p>

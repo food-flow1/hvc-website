@@ -2,6 +2,7 @@ import Hero from "@/src/components/landing-page/hero";
 import Partner from "@/src/components/landing-page/partners";
 import { Button } from "@mantine/core";
 import Image from "next/image";
+import Link from "next/link";
 
 function WeCare() {
   const joinList = [
@@ -40,7 +41,7 @@ function WeCare() {
   ];
 
   return (
-    <section className=" flex flex-col  gap-[clamp(30px,5.5vw,80px)] py-[clamp(30px,3.3vw,64px)] px-[clamp(40px,5.4vw,105px)] bg-white">
+    <section className=" flex flex-col  gap-[clamp(20px,5.5vw,80px)] py-[clamp(30px,3.3vw,64px)] px-[clamp(20px,5.4vw,105px)] bg-white">
       <div className=" flex flex-col gap-[10px]">
         <article className="py-[7px] px-[13px] bg-[#EBEBEB] rounded-[8px] w-fit ">
           <p className=" text-[10px] font-medium text-[#141414]">We Care</p>
@@ -90,13 +91,16 @@ function WeCare() {
                 agriculture.
               </p>
             </article>
-            <Button
-              variant="secondary"
-              size="nlg"
-              className="w-fit font-bold text-[16px py-[10px] px-[23px] w-fit"
-            >
-              Join us
-            </Button>
+
+            <Link href="/about" className=" cursor-pointer">
+              <Button
+                variant="secondary"
+                size="nlg"
+                className="w-fit font-bold text-[16px py-[10px] px-[23px] w-fit"
+              >
+                Join us
+              </Button>
+            </Link>
           </section>
         </section>
       </div>

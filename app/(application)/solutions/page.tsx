@@ -29,42 +29,6 @@ function Solutions() {
       <Benefits />
       <FarmFuelInterestForm />
     </main>
-    // Solution2
-    // <main className=" flex flex-col">
-    //   <SolutionsLayout
-    //     tag="Farm-to-Fork"
-    //     title="Food Flow"
-    //     description={[
-    //       "FoodFlow by HVC connects farmers directly to food processors, simplifying the farm-to-food supply chain. By eliminating middlemen, FoodFlow ensures fair pricing for farmers and a reliable source of fresh produce for processors, driving sustainable growth in local food production.",
-    //       "FoodFlow is designed to make farm-to-food transactions seamless and efficient. Our platform empowers farmers by providing direct access to food processors, enabling a smoother supply chain that strengthens local food production and fosters fair trade practices.",
-    //     ]}
-    //     imageSrc="/solution2.png"
-    //     imageAlt="food flow"
-    //     tagBg="#353e26"
-    //     backgroundColor="#141F01"
-    //   />
-
-    //   <Features />
-    // </main>
-
-    // Solution3
-
-    // <main className=" flex flex-col">
-    //   <SolutionsLayout
-    //     tag="HVC Food freedom"
-    //     title="Sustainable Food Access for All"
-    //     description={[
-    //       "Food Freedom offers a range of membership plans tailored for different lifestyles, from budget-friendly student packages to family bundles. Choose your preferred plan, and we’ll deliver a variety of food items, bonus essentials, and even branded gifts directly to your doorstep each month.",
-    //       "FoodFlow is designed to make farm-to-food transactions seamless and efficient. Our platform empowers farmers by providing direct access to food processors, enabling a smoother supply chain that strengthens local food production and fosters fair trade practices.",
-    //     ]}
-    //     imageSrc="/solution2.png"
-    //     imageAlt="food flow"
-    //     tagBg="#353e26"
-    //     backgroundColor="#141F01"
-    //   />
-
-    //   <Features />
-    // </main>
   );
 }
 

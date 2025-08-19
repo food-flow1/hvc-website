@@ -6,7 +6,7 @@ const growthList = ["Driven", "Rooted", "Impactful"];
 
 function GrowthSection() {
   return (
-    <main className=" py-[clamp(30px,6.8vw,131px)] px-[clamp(25px,4.1vw,80px)] flex justify-center bg-white">
+    <main className=" py-[clamp(30px,6.8vw,131px)] px-[clamp(20px,4.1vw,80px)] flex justify-center bg-white">
       <section
         className=" py-[clamp(40px,2.8vw,54px)] px-[clamp(35px,2.8vw,54px)]    flex-col flex justify-between rounded-[9px] gap-[clamp(30px,5.6vw,108px)] max-[544px]:gap-[clamp(16px,1vw,20px)] w-full"
         style={{

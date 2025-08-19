@@ -34,8 +34,8 @@ const benefits = [
 
 function Features() {
   return (
-    <div className=" px-[clamp(35px,4vw,80px)] py-[61px] justify-center bg-white flex flex-col gap-[60px]">
-      <section className=" px-[clamp(25px,2.6vw,50px)] py-[clamp(35px,2vw,44px)] bg-[#FAFAFA] flex flex-col gap-[40px] rounded-[30px]">
+    <div className=" px-[clamp(10px,4vw,80px)] py-[clamp(20px,3vw,61px)] justify-center bg-white flex flex-col gap-[clamp(20px,2vw,60px)]">
+      <section className=" px-[clamp(16px,2.6vw,50px)] py-[clamp(20px,2vw,44px)] bg-[#FAFAFA] flex flex-col gap-[clamp(20px,40px] rounded-[30px]">
         <TagLayout
           tag="Features"
           tagColour="#141414"
@@ -53,8 +53,8 @@ function Features() {
           className="mt-8"
         />
       </section>
-      <div className=" flex gap-[10px] justify-end">
-        <Button variant="secondary" size="lg">
+      <div className=" flex gap-[10px] justify-end items-center">
+        <Button variant="secondary" size="lg" className="w-fit">
           See Food flow Africa
         </Button>
         <article className=" flex items-center justify-center p-[6px] border border-[#9DC655] rounded-[8px] w-[38px] h-[38px]">

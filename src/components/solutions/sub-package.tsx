@@ -28,8 +28,8 @@ const packageList = [
 
 export default function SubPackage() {
   return (
-    <div className="px-[clamp(40px,4vw,85px)] py-[clamp(40px,5vw,104px)] bg-white">
-      <section className="flex justify-between w-full gap-[clamp(20px,2vw,32px)] max-[763px]:flex-col">
+    <div className="px-[clamp(20px,4vw,85px)] py-[clamp(20px,5vw,104px)] bg-white">
+      <section className="flex justify-between w-full gap-[clamp(16px,2.8vw,32px)] max-[763px]:flex-col">
         <div className="flex-1">
           <TagLayout
             tag="Our Subscription packages"
@@ -42,7 +42,7 @@ export default function SubPackage() {
           />
         </div>
 
-        <section className="relative px-[clamp(20px,2vw,42px)] pt-[clamp(20px,1.7vw,34px)] pb-[clamp(40px,4.8vw,94px)] bg-[#E5F1D4] rounded-[24px] flex-1">
+        <section className="relative px-[clamp(12px,2vw,42px)] pt-[clamp(12px,1.7vw,34px)] pb-[clamp(40px,4.8vw,94px)] bg-[#E5F1D4] rounded-[clamp(14px,2.8vw,24px)] flex-1">
           <div className="grid grid-cols-2 gap-[14px] h-fit max-[421px]:grid-cols-1">
             {packageList.map(({ name, details }, idx) => (
               <section
@@ -71,7 +71,7 @@ export default function SubPackage() {
 
           <div className=" bg-white px-[clamp(18px,1.4vw,28px)] py-[15px] rounded-bl-[14px] rounded-tl-[14px] absolute bottom-6 right-6 flex items-center gap-3 -mb-13 -mr-6">
             <Button variant="secondary" size="lg">
-              See Food flow Africa
+              Subscribe now
             </Button>
             <article className=" flex items-center justify-center p-[6px] border border-[#000] rounded-[8px] w-[38px] h-[38px]">
               <HiArrowUpRight className=" cursor-pointer text-[#000]" />

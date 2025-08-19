@@ -22,8 +22,8 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <div className=" px-[clamp(35px,4vw,80px)] py-[61px] items-center justify-center bg-white">
-      <section className=" px-[clamp(25px,2.6vw,50px)] py-[clamp(35px,2vw,44px)] bg-[#141F01] flex flex-col gap-[40px] rounded-[30px]">
+    <div className=" px-[clamp(20px,4vw,80px)] py-[clamp(20px,3vw,61px)] items-center justify-center bg-white">
+      <section className=" px-[clamp(20px,2.6vw,50px)] py-[clamp(20px,2vw,44px)] bg-[#141F01] flex flex-col gap-[40px] rounded-[30px]">
         <TagLayout
           tag="Benefits"
           tagColour="#fff"

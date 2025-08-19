@@ -39,10 +39,10 @@ function HeroCarousel() {
             paddingBottom: "16px",
             width: "219px",
             height: "54px",
-            clipPath: "polygon(0 0, 100% 0, 70% 100%, 0 100%)",
+            clipPath: "polygon(0 0, 100% 0, 79% 100%, 0 100%)",
           }}
         >
-          <div className=" flex gap-[10px]">
+          <div className=" flex gap-[10px] items-center">
             <Button variant="secondary" size="lg">
               Read more
             </Button>

@@ -173,17 +173,6 @@
     }
   }
 
-  &[data-size="nlgg"] {
-    padding: 10px 31px;
-    border-radius: 10px;
-
-    .label {
-      font-size: 14px;
-      font-weight: 700;
-      /* margin-inline: 6px; */
-    }
-  }
-
   &[data-size="vlg"] {
     padding: 10px 43px;
     border-radius: 10px;
@@ -195,13 +184,50 @@
   }
 
   &[data-size="lg"] {
-    padding: 10px 18px;
-    border-radius: 8px;
+    padding-inline: clamp(12px, 2vw, 24px);
+
+    padding-block: 10px;
+    border-radius: 10px;
+    height: 38px;
 
     .label {
       font-size: 16px;
       font-weight: 600;
       /* margin-inline: 6px; */
+    }
+  }
+
+  /* used */
+  &[data-size="lg-v"] {
+    padding-inline: 24px;
+    padding-block: 10px;
+    border-radius: 10px;
+    height: 38px;
+    .label {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+
+  &[data-size="footer"] {
+    padding-inline: 16px;
+    padding-block: 12px;
+    border-radius: 24px;
+    height: 40px;
+    .label {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+
+  &[data-size="apply"] {
+    padding-inline: 23px;
+    padding-block: 12px;
+    border-radius: 8px;
+    height: 48px;
+    .label {
+      font-size: 16px;
+      font-weight: 600;
     }
   }
 

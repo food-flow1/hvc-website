@@ -1,12 +1,158 @@
-import { Button, Drawer, Text } from "@mantine/core";
-import clsx from "clsx";
+// import { Button, Drawer, Text } from "@mantine/core";
+// import React from "react";
+// import Image from "next/image";
+// import { IoMdClose } from "react-icons/io";
+// import Link from "next/link";
+// import { usePathname } from "next/navigation";
+// import clsx from "clsx";
+// import SolutionMobilePopover from "@/src/components/shared/solution-mobile-popover";
 
+// type IDrawer = {
+//   opened: boolean;
+//   close: () => void;
+// };
+
+// const navbar = [
+//   {
+//     name: "Home",
+//     link: "/",
+//   },
+//   {
+//     name: "About HVC",
+//     link: "/about",
+//   },
+//   {
+//     name: "Co-operatives",
+//     link: "/cooperatives",
+//   },
+//   {
+//     name: "Solutions",
+//     link: "/solutions",
+//     children: [
+//       { name: "Solutions", link: "/solutions" },
+//       { name: "Food Flow", link: "/solutions/food-flow" },
+//       { name: "Food Freedom", link: "/solutions/food-freedom" },
+//     ],
+//   },
+//   {
+//     name: "Career at HVC",
+//     link: "/career",
+//   },
+//   {
+//     name: "News & Media",
+//     link: "/news",
+//   },
+// ];
+
+// export const HamburgerDrawer = ({ opened, close }: IDrawer) => {
+//   const pathname = usePathname();
+
+//   return (
+//     <Drawer
+//       position="right"
+//       size={268}
+//       withCloseButton={false}
+//       opened={opened}
+//       onClose={close}
+//       styles={{
+//         root: {
+//           display: "flex",
+//           flexDirection: "column",
+//           height: "100%",
+//         },
+//         content: {
+//           top: 0,
+//         },
+//         body: {
+//           height: "100%",
+//           overflow: "auto",
+//           padding: 0,
+//         },
+//       }}
+//     >
+//       <section className="px-4 flex flex-col gap-[21px] bg-white justify-center py-[17px]">
+//         <div className="flex justify-between items-center">
+//           <Image src="/logo.svg" alt="logo" width={64} height={51} />
+//           <div className="p-2 rounded-[8px] bg-[#14141414] flex items-center justify-center cursor-pointer w-[34px] h-[34px]">
+//             <IoMdClose
+//               color="#141414"
+//               size={18}
+//               className="cursor-pointer"
+//               onClick={() => close()}
+//             />
+//           </div>
+//         </div>
+
+//         <section className="flex flex-col gap-[60px]">
+//           <div className="flex flex-col gap-[24px]">
+//             {navbar.map((item, idx) => {
+//               const isActive =
+//                 item.link &&
+//                 (pathname === item.link ||
+//                   (item.link !== "/" && pathname.startsWith(item.link)));
+
+//               return (
+//                 <ul key={idx}>
+//                   <li>
+//                     {item.name === "Solutions" && item.children ? (
+//                       <div className="flex items-center gap-[3px]">
+//                         <span
+//                           className={clsx(
+//                             isActive
+//                               ? "text-[#9DC655] font-semibold"
+//                               : "text-[#444444] font-normal",
+//                             "text-[14px] hover:text-[#9DC655] p-[10px] hover:font-semibold cursor-pointer transition-colors"
+//                           )}
+//                         >
+//                           {item.name}
+//                         </span>
+//                         <SolutionMobilePopover />
+//                       </div>
+//                     ) : (
+//                       <Link href={item.link || "#"}>
+//                         <span
+//                           className={clsx(
+//                             isActive
+//                               ? "text-[#9DC655] font-semibold"
+//                               : "text-[#444444] font-normal",
+//                             "text-[14px] hover:text-[#9DC655] p-[10px] hover:font-semibold cursor-pointer transition-colors block"
+//                           )}
+//                           onClick={() => close()}
+//                         >
+//                           {item.name}
+//                         </span>
+//                       </Link>
+//                     )}
+//                   </li>
+//                 </ul>
+//               );
+//             })}
+//           </div>
+
+//           <Link href="/policy">
+//             <Button
+//               size="vlg"
+//               variant="outline-p"
+//               className="item-center border-[#9dc655] cursor-pointer justify-center leading-[20px] py-[10px] rounded-[8px] "
+//               onClick={() => close()}
+//             >
+//               Let's work together
+//             </Button>
+//           </Link>
+//         </section>
+//       </section>
+//     </Drawer>
+//   );
+// };
+
+import { Button, Drawer, Text } from "@mantine/core";
 import React from "react";
-import { FaBookReader } from "react-icons/fa";
-import { GiFarmTractor, GiFarmer } from "react-icons/gi";
-import { PiFarm } from "react-icons/pi";
 import Image from "next/image";
 import { IoMdClose } from "react-icons/io";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
+import SolutionMobilePopover from "@/src/components/shared/solution-mobile-popover";
 
 type IDrawer = {
   opened: boolean;
@@ -15,33 +161,43 @@ type IDrawer = {
 
 const navbar = [
   {
-    name: "Home ",
-    link: "",
+    name: "Home",
+    link: "/",
   },
   {
-    name: "About HVC ",
-    link: "",
+    name: "About HVC",
+    link: "/about",
   },
   {
-    name: "Co-operatives ",
-    link: "",
+    name: "Co-operatives",
+    link: "/cooperatives",
   },
   {
-    name: "Solutions ",
+    name: "Solutions",
+    link: "/solutions",
+    children: [
+      { name: "Solutions", link: "/solutions" },
+      { name: "Food Flow", link: "/solutions/food-flow" },
+      { name: "Food Freedom", link: "/solutions/food-freedom" },
+    ],
   },
   {
-    name: "Career at HVC ",
+    name: "Career at HVC",
+    link: "/career",
   },
   {
-    name: "News & Media ",
+    name: "News & Media",
+    link: "/news",
   },
 ];
 
 export const HamburgerDrawer = ({ opened, close }: IDrawer) => {
+  const pathname = usePathname();
+
   return (
     <Drawer
       position="right"
-      size={100}
+      size={268}
       withCloseButton={false}
       opened={opened}
       onClose={close}
@@ -51,10 +207,8 @@ export const HamburgerDrawer = ({ opened, close }: IDrawer) => {
           flexDirection: "column",
           height: "100%",
         },
-
         content: {
           top: 0,
-          height: "100vh",
         },
         body: {
           height: "100%",
@@ -63,42 +217,12 @@ export const HamburgerDrawer = ({ opened, close }: IDrawer) => {
         },
       }}
     >
-      {/* <section className="flex flex-col   gap-8 bg-white  dark:bg-[#191919] h-full "> */}
-      {/* <div className=" flex items-end  justify-end p-2">
-          <CgCloseR
-            size={30}
-            className="cursor-pointer"
-            onClick={() => close()}
-          />
-        </div> */}
-      {/* <div className=" py-[4rem] px-[4rem] flex flex-col  gap-10">
-          {navbar.map((item, idx) => (
-            <div
-              key={idx}
-              className=" flex flex-col text-black dark:text-white font-bold text-[1rem] p-3 bg-primary hover:bg-primary-500 rounded-lg"
-            >
-              <ul className=" flex gap-4 items-center">
-                <li>{item.icon}</li>
-
-                <li>{item.name}</li>
-              </ul>
-            </div>
-          ))}
-        </div> */}
-
-      {/* <div className="iflex justify-between">
-          <Heading title="Activity Log" />
-          <Link href="/activity-log" className="text-bms-red-600">
-            View All
-          </Link>
-        </div> */}
-      {/* </section> */}
-      <section className="px-4 flex flex-col gap-[21px] bg-white  justify-center h-[100vh] ">
-        <div className=" flex justify-between">
+      <section className="px-4 flex flex-col gap-[21px] bg-white justify-center py-[17px]">
+        <div className="flex justify-between items-center">
           <Image src="/logo.svg" alt="logo" width={64} height={51} />
-          <div className="p-2 rounded-[8px] bg-[#ededed] flex items-center justify-center cursor-pointer  w-[34px] h-[34px] ">
+          <div className="p-2 rounded-[8px] bg-[#14141414] flex items-center justify-center cursor-pointer w-[34px] h-[34px]">
             <IoMdClose
-              color="#000"
+              color="#141414"
               size={18}
               className="cursor-pointer"
               onClick={() => close()}
@@ -106,24 +230,62 @@ export const HamburgerDrawer = ({ opened, close }: IDrawer) => {
           </div>
         </div>
 
-        <section className=" flex flex-col gap-[60px]">
-          <div className="  flex flex-col  gap-[24px]">
-            {navbar.map((item, idx) => (
-              <ul key={idx} className="   ">
-                <li className="text-[#444444] font-normal text-[14px]  hover:text-[#9DC655]  p-[10px] hover:font-semibold cursor-pointer">
-                  {item.name}
-                </li>
-              </ul>
-            ))}
+        <section className="flex flex-col gap-[60px]">
+          <div className="flex flex-col gap-[24px]">
+            {navbar.map((item, idx) => {
+              const isActive =
+                item.link &&
+                (pathname === item.link ||
+                  (item.link !== "/" && pathname.startsWith(item.link)));
+
+              return (
+                <ul key={idx}>
+                  <li>
+                    {item.name === "Solutions" && item.children ? (
+                      <div className="flex items-center gap-[3px]">
+                        <span
+                          className={clsx(
+                            isActive
+                              ? "text-[#9DC655] font-semibold"
+                              : "text-[#444444] font-normal",
+                            "text-[14px] hover:text-[#9DC655] p-[10px] hover:font-semibold cursor-pointer transition-colors"
+                          )}
+                        >
+                          {item.name}
+                        </span>
+                        <SolutionMobilePopover onClose={close} />
+                      </div>
+                    ) : (
+                      <Link href={item.link || "#"}>
+                        <span
+                          className={clsx(
+                            isActive
+                              ? "text-[#9DC655] font-semibold"
+                              : "text-[#444444] font-normal",
+                            "text-[14px] hover:text-[#9DC655] p-[10px] hover:font-semibold cursor-pointer transition-colors block"
+                          )}
+                          onClick={() => close()}
+                        >
+                          {item.name}
+                        </span>
+                      </Link>
+                    )}
+                  </li>
+                </ul>
+              );
+            })}
           </div>
 
-          <Button
-            variant="outline-p"
-            size="xl"
-            className="item-center border-[#9dc655] cursor-pointer  justify-center leading-[20px]"
-          >
-            Let’s work together
-          </Button>
+          <Link href="/">
+            <Button
+              size="mdd"
+              variant="outline-p"
+              className="item-center border-[#9dc655] cursor-pointer justify-center leading-[20px] py-[10px] rounded-[8px] "
+              onClick={() => close()}
+            >
+              Let's work togetherr
+            </Button>
+          </Link>
         </section>
       </section>
     </Drawer>

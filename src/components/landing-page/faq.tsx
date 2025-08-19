@@ -36,8 +36,8 @@ function Faq() {
   ];
 
   return (
-    <section className=" bg-[#fbfdf8] py-[clamp(30px,3.8vw,74px)] px-[clamp(50px,4.5vw,87px)]  flex items-center justify-center max-[726px]:px-3 ">
-      <div className=" flex justify-between gap-[34px] max-[726px]:flex-col max-[726px]:w-full">
+    <section className=" bg-[#fbfdf8] py-[clamp(30px,3.8vw,74px)] px-[clamp(50px,4.5vw,87px)]  flex items-center justify-center max-[726px]:px-5 ">
+      <div className=" flex justify-between gap-[clamp(17px,2vw,34px)] max-[726px]:flex-col max-[726px]:w-full">
         <div className=" flex flex-1">
           <TagLayout
             tag="FAQs"
@@ -53,7 +53,7 @@ function Faq() {
         <div className="w-full flex flex-1 max-[726px]:w-full">
           <Accordion
             chevron={<GoPlus />}
-            className=" m-4 w-[clamp(500px,36vw,705px)] max-[726px]:w-full"
+            className="  w-[clamp(500px,36vw,705px)] max-[726px]:w-full"
             classNames={classes}
             defaultValue="How do i sign up for Foodflow?"
             chevronPosition="left"

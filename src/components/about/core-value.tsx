@@ -33,7 +33,7 @@ function CoreValue() {
   ];
 
   return (
-    <section className=" bg-[#f5f9ee] py-[clamp(20px,3.8vw,56px)] px-[clamp(30px,5.5vw,80px)]  flex items-center justify-center ">
+    <section className=" bg-[#f5f9ee] py-[clamp(20px,3.8vw,56px)] px-[clamp(20px,5.5vw,80px)]  flex items-center justify-center ">
       <div className=" flex flex-col gap-[clamp(18px,1.5vw,30px)]  items-center justify-center">
         <div className="flex max-[430px]:hidden">
           <TagLayout

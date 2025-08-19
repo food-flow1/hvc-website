@@ -3,8 +3,8 @@ import React from "react";
 export default function HowItWorks() {
   return (
     <section className="flex px-4 md:px-8 lg:px-[clamp(20px,4vw,80px)] py-8 md:py-12 lg:py-[clamp(22px,6.1vw,101px)] items-center justify-center bg-white">
-      <div className="flex flex-col gap-6 md:gap-8 lg:gap-[47px] w-full max-w-7xl">
-        <article className="flex flex-col gap-3 md:gap-[13px]">
+      <div className="flex flex-col gap-[clamp(16px,2vw,24px)] md:gap-8 lg:gap-[47px] w-full max-w-7xl">
+        <article className="flex flex-col gap-[clamp(10px,1vw,12px)] md:gap-[13px]">
           <h3 className="text-[clamp(24px,5vw,30px)] font-bold text-[#141414]">
             How it works
           </h3>

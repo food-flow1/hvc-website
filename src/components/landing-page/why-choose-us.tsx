@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function WhyChooseUs() {
   return (
-    <section className=" bg-white flex items-center justify-center py-[clamp(74px,9.7vw,188px)]  ">
+    <section className=" bg-white flex items-center justify-center py-[clamp(30px,9.7vw,188px)]  ">
       <div className=" flex flex-col gap-[clamp(30px,2.0vw,40px)] px-4">
         <div className=" flex flex-col gap-1 items-center justify-center">
           <article className="py-[7px] px-[20px] bg-[#dedede] rounded-[8px] w-fit ">

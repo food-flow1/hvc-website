@@ -30,10 +30,10 @@ function SolutionsLayout({
 }: SolutionsProps) {
   return (
     <section
-      className="flex px-[clamp(40px,4vw,80px)] py-[clamp(40px,4vw,80px)] items-center justify-center"
+      className="flex px-[clamp(20px,4vw,80px)] py-[clamp(20px,4vw,80px)] items-center justify-center"
       style={{ backgroundColor }}
     >
-      <section className="justify-between flex items-center max-w-7xl w-full gap-8 max-[666px]:flex-col  ">
+      <section className="justify-between flex items-center  w-full gap-8 max-[666px]:flex-col  ">
         <div className={clsx("flex flex-col gap-1 flex-1")}>
           <article
             style={{ backgroundColor: tagBg }}
