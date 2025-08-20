@@ -230,6 +230,17 @@
       font-weight: 600;
     }
   }
+  &[data-size="mdd"] {
+    padding-inline: 53px;
+    padding-block: 8px;
+    border-radius: 8px;
+    /* width: 256px; */
+    height: 40px;
+    .label {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
 
   &[data-size="md"] {
     height: 54px;

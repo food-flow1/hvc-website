@@ -49,7 +49,7 @@ function Header() {
           <Image src="/logo.svg" alt="logo" width={100} height={80} />
         </Link>
 
-        <section className="flex gap-[clamp(10px,4.1vw,60px)] items-center max-[631px]:hidden">
+        <section className="flex gap-[clamp(10px,4.1vw,60px)] items-center max-[1062px]:hidden">
           <ul className="flex gap-[clamp(4px,0.7vw,10px)]">
             {navList.map((item, idx) => {
               const isActive =
@@ -87,7 +87,7 @@ function Header() {
           </Link>
         </section>
 
-        <div className="hidden max-[631px]:flex">
+        <div className="hidden max-[1062px]:flex">
           <div
             className="p-2 rounded-[8px] bg-[#2c361b] flex items-center justify-center cursor-pointer"
             onClick={() => open()}

@@ -206,6 +206,7 @@ export const HamburgerDrawer = ({ opened, close }: IDrawer) => {
           display: "flex",
           flexDirection: "column",
           height: "100%",
+          border: "none",
         },
         content: {
           top: 0,
@@ -231,7 +232,7 @@ export const HamburgerDrawer = ({ opened, close }: IDrawer) => {
         </div>
 
         <section className="flex flex-col gap-[60px]">
-          <div className="flex flex-col gap-[24px]">
+          <div className="flex flex-col gap-[24px] border-none ">
             {navbar.map((item, idx) => {
               const isActive =
                 item.link &&
@@ -276,11 +277,11 @@ export const HamburgerDrawer = ({ opened, close }: IDrawer) => {
             })}
           </div>
 
-          <Link href="/">
+          <Link className="" href="/">
             <Button
               size="mdd"
               variant="outline-p"
-              className="item-center border-[#9dc655] cursor-pointer justify-center leading-[20px] py-[10px] rounded-[8px] "
+              className="item-center border-[#9dc655] cursor-pointer justify-center leading-[20px] py-[10px] rounded-[8px]  "
               onClick={() => close()}
             >
               Let's work together

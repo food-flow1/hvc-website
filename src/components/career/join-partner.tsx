@@ -76,7 +76,7 @@ export default function JoinPartner() {
               className="bg-[#fff] rounded-[10px]"
               style={{
                 // paddingBottom: "16px",
-                width: "255px",
+                width: "260px",
                 height: "64px",
                 clipPath: "polygon(0 0, 100% 0, 70% 100%, 0 100%)",
               }}
