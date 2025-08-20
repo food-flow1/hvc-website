@@ -283,7 +283,7 @@ export const HamburgerDrawer = ({ opened, close }: IDrawer) => {
               className="item-center border-[#9dc655] cursor-pointer justify-center leading-[20px] py-[10px] rounded-[8px] "
               onClick={() => close()}
             >
-              Let's work togetherr
+              Let's work together
             </Button>
           </Link>
         </section>
