@@ -75,7 +75,7 @@ const socials = [
   },
   {
     icon: <FaFacebook color="#fff" size={20} />,
-    link: "https://www.facebook.com/share/1GqhDNLZ4N ",
+    link: "https://www.facebook.com/share/1GqhDNLZ4N/",
   },
 ];
 
