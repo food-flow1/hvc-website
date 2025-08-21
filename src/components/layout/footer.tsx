@@ -59,23 +59,23 @@ const navList = [
 const socials = [
   {
     icon: <FaLinkedinIn color="#fff" size={20} />,
-    link: "/",
+    link: "https://www.linkedin.com/company/harvest-value-chain-limited/",
   },
   {
     icon: <RiInstagramFill color="#fff" size={20} />,
-    link: "/",
+    link: "https://www.instagram.com/harvest_value_chain",
   },
   {
     icon: <BsYoutube color="#fff" size={20} />,
-    link: "/",
+    link: "https://www.youtube.com/@HarvestValueChain",
   },
   {
     icon: <FaTiktok color="#fff" size={20} />,
-    link: "/",
+    link: "https//www.tiktok.com@hvcproject",
   },
   {
     icon: <FaFacebook color="#fff" size={20} />,
-    link: "/",
+    link: "https://www.facebook.com/share/1GqhDNLZ4N/ ",
   },
 ];
 
@@ -96,6 +96,9 @@ const styles = {
 };
 
 function Footer() {
+  const handleSocialClick = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
   return (
     <main>
       <GrowthSection />
@@ -137,10 +140,20 @@ function Footer() {
               </div>
 
               <article className=" flex gap-[16px] pt-[20px]">
-                {socials.map(({ icon }, idx) => (
+                {socials.map(({ icon, link }, idx) => (
                   <div
+                    role="button"
+                    onClick={() => handleSocialClick(link)}
                     key={idx}
-                    className=" flex items-center justify-center w-[40px] h-[40px] p-[10px] border border-[#525b44] bg-[#2c361b] rounded-full"
+                    className=" flex items-center justify-center w-[40px] h-[40px] p-[10px] border border-[#525b44] bg-[#2c361b] rounded-full cursor-pointer"
+                    tabIndex={0}
+                    aria-label={`Visit our page`}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        handleSocialClick(link);
+                      }
+                    }}
                   >
                     {icon}
                   </div>
