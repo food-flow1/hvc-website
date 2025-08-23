@@ -1,28 +1,13 @@
 "use client";
 
-import { Hamburger } from "@/src/components/ui/icons/hambuger";
-import { HamburgerDrawer } from "@/src/components/ui/mantine/drawers/hamburger-drawer";
-import { Divider, TextInput } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import { TextInput } from "@mantine/core";
 import Image from "next/image";
-import SolutionPopover from "../landing-page/solution-popover";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import clsx from "clsx";
-import { main } from "framer-motion/client";
 import GrowthSection from "../landing-page/growth-section";
-import {
-  FaFacebook,
-  FaFacebookF,
-  FaLinkedinIn,
-  FaTiktok,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaFacebook, FaLinkedinIn, FaTiktok } from "react-icons/fa";
 import { BsInstagram, BsYoutube } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
 import { Button } from "../ui/mantine/buttons";
-import { color } from "framer-motion";
 
 const navList = [
   {
