@@ -251,35 +251,15 @@ export default function page() {
   }, [id]);
   console.log(detailId, "details");
 
-  // const processContent = (content: any) => {
-  //   if (!content) return "";
-
-  //   // Replace relative image URLs with absolute URLs
-  //   return content
-  //     .replace(
-  //       /src="\/wp-content\//g,
-  //       'src="https://www.hvcproject.com/wp-content/'
-  //     )
-  //     .replace(
-  //       /src="wp-content\//g,
-  //       'src="https://www.hvcproject.com/wp-content/'
-  //     );
-  // };
-
+  // Function to fix HTTP to HTTPS URLs
   const fixWordPressImageUrls = (content: any) => {
     if (!content) return "";
 
-    let fixedContent = content;
-
-    // Fix HTTP URLs to HTTPS for both hvcproject.com and www.hvcproject.com
-    fixedContent = fixedContent
-      // Fix src attributes
+    return content
       .replace(
         /src="http:\/\/(www\.)?hvcproject\.com\//gi,
         'src="https://www.hvcproject.com/'
       )
-
-      // Fix srcset attributes
       .replace(/srcset="([^"]+)"/gi, (match: any, srcset: any) => {
         const fixedSrcset = srcset.replace(
           /http:\/\/(www\.)?hvcproject\.com\//gi,
@@ -287,21 +267,10 @@ export default function page() {
         );
         return `srcset="${fixedSrcset}"`;
       })
-
-      // Fix data-src and other data attributes
       .replace(
         /data-src="http:\/\/(www\.)?hvcproject\.com\//gi,
         'data-src="https://www.hvcproject.com/'
-      )
-      .replace(/data-srcset="([^"]+)"/gi, (match: any, srcset: any) => {
-        const fixedSrcset = srcset.replace(
-          /http:\/\/(www\.)?hvcproject\.com\//gi,
-          "https://www.hvcproject.com/"
-        );
-        return `data-srcset="${fixedSrcset}"`;
-      });
-
-    return fixedContent;
+      );
   };
 
   useEffect(() => {
@@ -335,53 +304,6 @@ export default function page() {
 
     fetchDetails();
   }, [id]);
-
-  // useEffect(() => {
-  //   if (postDetails?.[0]?.content?.rendered) {
-  //     // Log the content to see the actual URLs
-  //     console.log("Content in production:", postDetails[0].content.rendered);
-
-  //     // Extract and test image URLs
-  //     const imgRegex = /<img[^>]+src="([^"]+)"/g;
-  //     let match;
-
-  //     while (
-  //       (match = imgRegex.exec(postDetails[0].content.rendered)) !== null
-  //     ) {
-  //       const imageUrl = match[1];
-  //       console.log("Testing image URL:", imageUrl);
-
-  //       // Test if the image is accessible
-  //       fetch(imageUrl, { method: "HEAD" })
-  //         .then((response) => {
-  //           console.log(`Image ${imageUrl} status:`, response.status);
-  //         })
-  //         .catch((error) => {
-  //           console.error(`Image ${imageUrl} failed:`, error);
-  //         });
-  //     }
-  //   }
-  // }, [postDetails]);
-
-  useEffect(() => {
-    if (postDetails?.[0]?.content?.rendered) {
-      const originalContent = postDetails[0].content.rendered;
-      const fixedContent = fixWordPressImageUrls(originalContent);
-
-      console.log(
-        "Original content (first 500 chars):",
-        originalContent.substring(0, 500)
-      );
-      console.log(
-        "Fixed content (first 500 chars):",
-        fixedContent.substring(0, 500)
-      );
-
-      // Check if HTTP URLs are still present
-      const hasHttpImages = fixedContent.includes('src="http://');
-      console.log("Still has HTTP images:", hasHttpImages);
-    }
-  }, [postDetails]);
 
   if (loading) {
     return (
