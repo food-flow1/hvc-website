@@ -298,6 +298,33 @@ export default function page() {
     fetchDetails();
   }, [id]);
 
+  useEffect(() => {
+    if (postDetails?.[0]?.content?.rendered) {
+      // Log the content to see the actual URLs
+      console.log("Content in production:", postDetails[0].content.rendered);
+
+      // Extract and test image URLs
+      const imgRegex = /<img[^>]+src="([^"]+)"/g;
+      let match;
+
+      while (
+        (match = imgRegex.exec(postDetails[0].content.rendered)) !== null
+      ) {
+        const imageUrl = match[1];
+        console.log("Testing image URL:", imageUrl);
+
+        // Test if the image is accessible
+        fetch(imageUrl, { method: "HEAD" })
+          .then((response) => {
+            console.log(`Image ${imageUrl} status:`, response.status);
+          })
+          .catch((error) => {
+            console.error(`Image ${imageUrl} failed:`, error);
+          });
+      }
+    }
+  }, [postDetails]);
+
   if (loading) {
     return (
       <main className="px-[clamp(30px,4vw,90px)] py-[clamp(20px,3vw,60px)] flex items-center justify-center bg-white">
