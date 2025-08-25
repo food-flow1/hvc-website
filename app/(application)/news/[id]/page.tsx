@@ -251,19 +251,57 @@ export default function page() {
   }, [id]);
   console.log(detailId, "details");
 
-  const processContent = (content: any) => {
+  // const processContent = (content: any) => {
+  //   if (!content) return "";
+
+  //   // Replace relative image URLs with absolute URLs
+  //   return content
+  //     .replace(
+  //       /src="\/wp-content\//g,
+  //       'src="https://www.hvcproject.com/wp-content/'
+  //     )
+  //     .replace(
+  //       /src="wp-content\//g,
+  //       'src="https://www.hvcproject.com/wp-content/'
+  //     );
+  // };
+
+  const fixWordPressImageUrls = (content: any) => {
     if (!content) return "";
 
-    // Replace relative image URLs with absolute URLs
-    return content
+    let fixedContent = content;
+
+    // Fix HTTP URLs to HTTPS for both hvcproject.com and www.hvcproject.com
+    fixedContent = fixedContent
+      // Fix src attributes
       .replace(
-        /src="\/wp-content\//g,
-        'src="https://www.hvcproject.com/wp-content/'
+        /src="http:\/\/(www\.)?hvcproject\.com\//gi,
+        'src="https://www.hvcproject.com/'
       )
+
+      // Fix srcset attributes
+      .replace(/srcset="([^"]+)"/gi, (match: any, srcset: any) => {
+        const fixedSrcset = srcset.replace(
+          /http:\/\/(www\.)?hvcproject\.com\//gi,
+          "https://www.hvcproject.com/"
+        );
+        return `srcset="${fixedSrcset}"`;
+      })
+
+      // Fix data-src and other data attributes
       .replace(
-        /src="wp-content\//g,
-        'src="https://www.hvcproject.com/wp-content/'
-      );
+        /data-src="http:\/\/(www\.)?hvcproject\.com\//gi,
+        'data-src="https://www.hvcproject.com/'
+      )
+      .replace(/data-srcset="([^"]+)"/gi, (match: any, srcset: any) => {
+        const fixedSrcset = srcset.replace(
+          /http:\/\/(www\.)?hvcproject\.com\//gi,
+          "https://www.hvcproject.com/"
+        );
+        return `data-srcset="${fixedSrcset}"`;
+      });
+
+    return fixedContent;
   };
 
   useEffect(() => {
@@ -298,30 +336,50 @@ export default function page() {
     fetchDetails();
   }, [id]);
 
+  // useEffect(() => {
+  //   if (postDetails?.[0]?.content?.rendered) {
+  //     // Log the content to see the actual URLs
+  //     console.log("Content in production:", postDetails[0].content.rendered);
+
+  //     // Extract and test image URLs
+  //     const imgRegex = /<img[^>]+src="([^"]+)"/g;
+  //     let match;
+
+  //     while (
+  //       (match = imgRegex.exec(postDetails[0].content.rendered)) !== null
+  //     ) {
+  //       const imageUrl = match[1];
+  //       console.log("Testing image URL:", imageUrl);
+
+  //       // Test if the image is accessible
+  //       fetch(imageUrl, { method: "HEAD" })
+  //         .then((response) => {
+  //           console.log(`Image ${imageUrl} status:`, response.status);
+  //         })
+  //         .catch((error) => {
+  //           console.error(`Image ${imageUrl} failed:`, error);
+  //         });
+  //     }
+  //   }
+  // }, [postDetails]);
+
   useEffect(() => {
     if (postDetails?.[0]?.content?.rendered) {
-      // Log the content to see the actual URLs
-      console.log("Content in production:", postDetails[0].content.rendered);
+      const originalContent = postDetails[0].content.rendered;
+      const fixedContent = fixWordPressImageUrls(originalContent);
 
-      // Extract and test image URLs
-      const imgRegex = /<img[^>]+src="([^"]+)"/g;
-      let match;
+      console.log(
+        "Original content (first 500 chars):",
+        originalContent.substring(0, 500)
+      );
+      console.log(
+        "Fixed content (first 500 chars):",
+        fixedContent.substring(0, 500)
+      );
 
-      while (
-        (match = imgRegex.exec(postDetails[0].content.rendered)) !== null
-      ) {
-        const imageUrl = match[1];
-        console.log("Testing image URL:", imageUrl);
-
-        // Test if the image is accessible
-        fetch(imageUrl, { method: "HEAD" })
-          .then((response) => {
-            console.log(`Image ${imageUrl} status:`, response.status);
-          })
-          .catch((error) => {
-            console.error(`Image ${imageUrl} failed:`, error);
-          });
-      }
+      // Check if HTTP URLs are still present
+      const hasHttpImages = fixedContent.includes('src="http://');
+      console.log("Still has HTTP images:", hasHttpImages);
     }
   }, [postDetails]);
 
@@ -377,11 +435,20 @@ export default function page() {
                   __html: postDetails?.[0]?.content?.rendered || "",
                 }}
               /> */}
-              <div
+              {/* <div
                 className="text-[#444444] font-normal text-[16px] prose prose-lg max-w-none"
                 dangerouslySetInnerHTML={{
                   __html:
                     processContent(postDetails?.[0]?.content?.rendered) || "",
+                }}
+              /> */}
+              <div
+                className="text-[#444444] font-normal text-[16px] prose prose-lg max-w-none"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    fixWordPressImageUrls(
+                      postDetails?.[0]?.content?.rendered
+                    ) || "",
                 }}
               />
             </article>
