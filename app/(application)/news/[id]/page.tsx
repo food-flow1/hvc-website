@@ -251,6 +251,21 @@ export default function page() {
   }, [id]);
   console.log(detailId, "details");
 
+  const processContent = (content: any) => {
+    if (!content) return "";
+
+    // Replace relative image URLs with absolute URLs
+    return content
+      .replace(
+        /src="\/wp-content\//g,
+        'src="https://www.hvcproject.com/wp-content/'
+      )
+      .replace(
+        /src="wp-content\//g,
+        'src="https://www.hvcproject.com/wp-content/'
+      );
+  };
+
   useEffect(() => {
     async function fetchDetails() {
       if (!id) return;
@@ -329,10 +344,17 @@ export default function page() {
 
           <div className="flex flex-col gap-[40px]">
             <article>
-              <div
+              {/* <div
                 className="text-[#444444] font-normal text-[16px] prose prose-lg max-w-none"
                 dangerouslySetInnerHTML={{
                   __html: postDetails?.[0]?.content?.rendered || "",
+                }}
+              /> */}
+              <div
+                className="text-[#444444] font-normal text-[16px] prose prose-lg max-w-none"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    processContent(postDetails?.[0]?.content?.rendered) || "",
                 }}
               />
             </article>
