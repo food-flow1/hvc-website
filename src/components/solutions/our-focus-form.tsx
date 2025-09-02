@@ -7,7 +7,7 @@ interface FormData {
   lastName: string;
   phone: string;
   businessEmail: string;
-  interests: string[];
+  package: string[];
   comments: string;
   contactTime: string;
 }
@@ -19,7 +19,7 @@ function OurFocusForm() {
     lastName: "",
     phone: "",
     businessEmail: "",
-    interests: [],
+    package: [],
     comments: "",
     contactTime: "",
   });
@@ -39,8 +39,8 @@ function OurFocusForm() {
     setFormData((prev) => ({
       ...prev,
       interests: checked
-        ? [...prev.interests, value]
-        : prev.interests.filter((item) => item !== value),
+        ? [...prev.package, value]
+        : prev.package.filter((item) => item !== value),
     }));
   };
 
@@ -58,7 +58,7 @@ function OurFocusForm() {
       return;
     }
 
-    if (formData.interests.length === 0) {
+    if (formData.package.length === 0) {
       alert("Please select at least one area of interest.");
       return;
     }
@@ -75,7 +75,7 @@ function OurFocusForm() {
       lastName: "",
       phone: "",
       businessEmail: "",
-      interests: [],
+      package: [],
       comments: "",
       contactTime: "",
     });
@@ -273,7 +273,7 @@ function OurFocusForm() {
                     <input
                       type="checkbox"
                       value={option}
-                      checked={formData.interests.includes(option)}
+                      checked={formData.package.includes(option)}
                       onChange={handleCheckboxChange}
                       className="w-4 h-4 text-[#9DC655] border-gray-300 rounded focus:ring-[#9DC655]"
                     />
@@ -299,7 +299,7 @@ function OurFocusForm() {
                     <input
                       type="checkbox"
                       value={option}
-                      checked={formData.interests.includes(option)}
+                      checked={formData.package.includes(option)}
                       onChange={handleCheckboxChange}
                       className="w-4 h-4 text-[#9DC655] border-gray-300 rounded focus:ring-[#9DC655]"
                     />
@@ -348,9 +348,8 @@ function OurFocusForm() {
               >
                 <option value="">Choose</option>
                 <option value="phone">Phone</option>
-                <option value="sms">Sms </option>
+
                 <option value="email">Email</option>
-                <option value="anytime">Socials</option>
               </select>
             </div>
 
