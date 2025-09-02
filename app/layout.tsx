@@ -44,19 +44,19 @@ export default function RootLayout({
       </head>
       <body className={`${instrumentSans.variable}  antialiased`}>
         <MantineProvider theme={theme}>
-          <script
+          {/* <script
             type="text/javascript"
             id="hs-script-loader"
             async
             defer
             src="//js-eu1.hs-scripts.com/146771318.js"
-          >
-            <main className="flex flex-col ">
-              <Header />
-              {children}
-              <Footer />
-            </main>
-          </script>
+          > */}
+          <main className="flex flex-col ">
+            <Header />
+            {children}
+            <Footer />
+          </main>
+          {/* </script> */}
         </MantineProvider>
       </body>
     </html>
