@@ -352,7 +352,7 @@ interface FormData {
   firstName: string;
   lastName: string;
   phone: string;
-  businessEmail: string;
+
   interests: string[];
   comments: string;
   contactTime: string;
@@ -364,7 +364,7 @@ function FarmFuelInterestForm() {
     firstName: "",
     lastName: "",
     phone: "",
-    businessEmail: "",
+
     interests: [],
     comments: "",
     contactTime: "",
@@ -446,7 +446,7 @@ function FarmFuelInterestForm() {
       firstName: "",
       lastName: "",
       phone: "",
-      businessEmail: "",
+
       interests: [],
       comments: "",
       contactTime: "",

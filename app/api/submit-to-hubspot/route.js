@@ -468,7 +468,7 @@ export async function POST(request) {
         { name: "phone", value: formData.phone },
         { name: "comments", value: formData.comments || "" },
         {
-          name: "farm_fuel_interests",
+          name: "interests",
           value: formData.interests.length ? formData.interests.join(";") : "",
         },
         { name: "preferred_contact_time", value: formData.contactTime || "" },
