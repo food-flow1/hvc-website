@@ -510,7 +510,7 @@ function OurFocusForm() {
         },
         {
           objectTypeId: "0-1",
-          name: "message",
+          name: "comments",
           value: formData.comments,
         },
         {

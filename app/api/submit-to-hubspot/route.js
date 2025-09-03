@@ -538,8 +538,8 @@ export async function POST(request) {
       { name: "firstname", value: formData.firstName || "" },
       { name: "lastname", value: formData.lastName || "" },
       { name: "phone", value: formData.phone || "" },
-      { name: "message", value: formData.comments || "" },
-              { name: "preferred_contact_method", value: formData.contactMethod || "" },
+      { name: "comments", value: formData.comments || "" },
+              { name: "contact_method", value: formData.contactMethod || "" },
     ];
 
     // Check if this is the Food Freedom form (has subscription_type)
