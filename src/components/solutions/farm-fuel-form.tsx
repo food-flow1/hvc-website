@@ -356,6 +356,7 @@ interface FormData {
   interests: string[];
   comments: string;
   contactTime: string;
+  contactMethod: string;
 }
 
 function FarmFuelInterestForm() {
@@ -368,6 +369,7 @@ function FarmFuelInterestForm() {
     interests: [],
     comments: "",
     contactTime: "",
+    contactMethod: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -450,6 +452,7 @@ function FarmFuelInterestForm() {
       interests: [],
       comments: "",
       contactTime: "",
+      contactMethod: "",
     });
   };
 
@@ -632,16 +635,16 @@ function FarmFuelInterestForm() {
             {/* Preferred Contact Time */}
             <div className="border border-[#EBEBEB] bg-white px-[25px] py-[20px] rounded-[10px]">
               <label
-                htmlFor="contactTime"
+                htmlFor="contactMethod"
                 className="block text-sm font-medium text-gray-700 mb-2"
               >
                 Preferred Contact Method
                 <span className="text-red-500">*</span>
               </label>
               <select
-                id="contactTime"
-                name="contactTime"
-                value={formData.contactTime}
+                id="contactMethod"
+                name="contactMethod"
+                value={formData.contactMethod}
                 onChange={handleInputChange}
                 className="w-full px-1 py-3  border-b border-b-[#EBEBEB] rounded-lg focus:ring-2 focus:ring-[#9DC655] focus:border-[#9DC655] transition-colors  contactTime"
               >
