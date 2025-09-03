@@ -443,7 +443,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(request) {
   try {
-    const { formData } = await request.json();
+    const { formData,pageUrl } = await request.json();
     
     const portalId = "146771318";
     const formGuid = "238901cf-20e8-4214-adb5-07e59ef7d0dc";
@@ -475,7 +475,8 @@ export async function POST(request) {
       ],
       context: {
         hutk: hutk, // This is critical!
-        pageUri: referer,
+        // pageUri: referer || 'https://hvc-website-rho.vercel.app/',
+         pageUri: pageUrl,
         pageName: "Farm Fuel Interest Form",
         ipAddress: clientIP,
       },
