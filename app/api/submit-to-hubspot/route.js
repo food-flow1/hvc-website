@@ -383,14 +383,82 @@
 //   }
 // }
 
+// import { NextResponse } from "next/server";
+
+// export async function POST(request) {
+//   try {
+//     const { formData } = await request.json();
+
+//     const portalId = "146771318"; // replace with your HubSpot portal ID
+//     const formGuid = "238901cf-20e8-4214-adb5-07e59ef7d0dc"; // replace with your HubSpot form GUID
+
+//     const hubspotPayload = {
+//       fields: [
+//         { name: "email", value: formData.email },
+//         { name: "firstname", value: formData.firstName },
+//         { name: "lastname", value: formData.lastName },
+//         { name: "phone", value: formData.phone },
+//         { name: "comments", value: formData.comments || "" },
+//         {
+//           name: "farm_fuel_interests",
+//           value: formData.interests.length ? formData.interests.join(";") : "",
+//         },
+//         { name: "preferred_contact_time", value: formData.contactTime || "" },
+//       ],
+//       context: {
+//         pageUri: "https://yourwebsite.com/farm-fuel-form",
+//         pageName: "Farm Fuel Interest Form",
+//       },
+//     };
+
+//     const hubspotResponse = await fetch(
+//       `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`,
+//       {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify(hubspotPayload),
+//       }
+//     );
+
+//     if (!hubspotResponse.ok) {
+//       const errorText = await hubspotResponse.text();
+//       return NextResponse.json(
+//         { error: "HubSpot API error", details: errorText },
+//         { status: hubspotResponse.status }
+//       );
+//     }
+
+//     const hubspotData = await hubspotResponse.json();
+//     return NextResponse.json({ success: true, hubspotData });
+//   } catch (error) {
+//     return NextResponse.json(
+//       { error: "Unexpected error", message: error?.message || String(error) },
+//       { status: 500 }
+//     );
+//   }
+// }
+
+
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
   try {
     const { formData } = await request.json();
+    
+    const portalId = "146771318";
+    const formGuid = "238901cf-20e8-4214-adb5-07e59ef7d0dc";
 
-    const portalId = "146771318"; // replace with your HubSpot portal ID
-    const formGuid = "238901cf-20e8-4214-adb5-07e59ef7d0dc"; // replace with your HubSpot form GUID
+    // Get the hutk from cookies (set by HubSpot tracking code)
+    const cookies = request.headers.get('cookie') || '';
+    const hutkMatch = cookies.match(/hubspotutk=([^;]+)/);
+    const hutk = hutkMatch ? hutkMatch[1] : undefined;
+
+    // Get real client IP and referrer
+    const clientIP = request.headers.get('x-forwarded-for') || 
+                    request.headers.get('x-real-ip') || 
+                    request.ip;
+    
+    const referer = request.headers.get('referer') || 'https://hvc-website-rho.vercel.app/';
 
     const hubspotPayload = {
       fields: [
@@ -406,8 +474,10 @@ export async function POST(request) {
         { name: "preferred_contact_time", value: formData.contactTime || "" },
       ],
       context: {
-        pageUri: "https://yourwebsite.com/farm-fuel-form",
+        hutk: hutk, // This is critical!
+        pageUri: referer,
         pageName: "Farm Fuel Interest Form",
+        ipAddress: clientIP,
       },
     };
 
@@ -415,7 +485,9 @@ export async function POST(request) {
       `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`,
       {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(hubspotPayload),
       }
     );
