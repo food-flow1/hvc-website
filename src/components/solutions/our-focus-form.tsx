@@ -419,6 +419,7 @@ interface FormData {
   phone: string;
   businessEmail: string;
   package: string[];
+  referral: string; // <-- added
   comments: string;
   contactTime: string;
 }
@@ -431,6 +432,7 @@ function OurFocusForm() {
     phone: "",
     businessEmail: "",
     package: [],
+    referral: "", // <-- added
     comments: "",
     contactTime: "",
   });
@@ -445,6 +447,7 @@ function OurFocusForm() {
     }));
   };
 
+  // For multiple checkboxes (packages)
   const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = e.target;
     setFormData((prev) => ({
@@ -452,6 +455,14 @@ function OurFocusForm() {
       package: checked
         ? [...prev.package, value]
         : prev.package.filter((item) => item !== value),
+    }));
+  };
+
+  // For single choice (referral Yes/No)
+  const handleReferralChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      referral: e.target.value,
     }));
   };
 
@@ -500,6 +511,7 @@ function OurFocusForm() {
               { name: "business_email", value: formData.businessEmail },
               { name: "comments", value: formData.comments },
               { name: "package", value: formData.package.join(", ") },
+              { name: "referral_interest", value: formData.referral }, // <-- new
               { name: "contact_time", value: formData.contactTime },
             ],
             context: {
@@ -532,6 +544,7 @@ function OurFocusForm() {
       phone: "",
       businessEmail: "",
       package: [],
+      referral: "", // reset referral
       comments: "",
       contactTime: "",
     });
@@ -541,13 +554,13 @@ function OurFocusForm() {
     <div className="min-h-screen bg-[#fafafa] py-[clamp(20px,3vw,72px)] px-4">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
-        <div className=" flex flex-col gap-[11px] items-center">
+        <div className="flex flex-col gap-[11px] items-center">
           <article
             className={clsx(
               "py-[7px] px-[11px] bg-[#dedede] rounded-[8px] w-fit"
             )}
           >
-            <p className=" text-[10px] font-medium text-[#141414]">
+            <p className="text-[10px] font-medium text-[#141414]">
               Ready to enjoy freedom in food choices
             </p>
           </article>
@@ -558,7 +571,7 @@ function OurFocusForm() {
         </div>
 
         {/* Form Card */}
-        <div className="mt-8 ">
+        <div className="mt-8">
           <div className="rounded-[20px] p-6 mb-[clamp(16px,2vw,32px)] border border-[#EBEBEB] bg-white relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-3 bg-gradient-to-r from-[#9DC655] to-[#7BA83F] rounded-t-[20px]"></div>
             <div className="pt-2">
@@ -577,9 +590,50 @@ function OurFocusForm() {
             </div>
           </div>
 
-          {/* --- your existing fields go here unchanged --- */}
+          {/* Example fields (add your inputs here) */}
+          <div className="mt-4">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Preferred monthly package
+            </label>
+            <div className="flex flex-col space-y-2">
+              {["Basic", "Standard", "Premium"].map((option) => (
+                <label key={option} className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    value={option}
+                    checked={formData.package.includes(option)}
+                    onChange={handleCheckboxChange}
+                    className="w-4 h-4 text-[#9DC655] border-gray-300 focus:ring-[#9DC655]"
+                  />
+                  <span className="text-[#444444]">{option}</span>
+                </label>
+              ))}
+            </div>
+          </div>
 
-          <div className="flex justify-between items-center ">
+          <div className="mt-4">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Are you interested in our referral program?
+            </label>
+            <div className="flex space-x-6">
+              {["Yes", "No"].map((option) => (
+                <label key={option} className="flex items-center space-x-2">
+                  <input
+                    type="radio"
+                    name="referral"
+                    value={option}
+                    checked={formData.referral === option}
+                    onChange={handleReferralChange}
+                    className="w-4 h-4 text-[#9DC655] border-gray-300 focus:ring-[#9DC655]"
+                  />
+                  <span className="text-[#444444]">{option}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+
+          {/* Submit & Clear */}
+          <div className="flex justify-between items-center mt-6">
             <button
               type="button"
               onClick={handleSubmit}
@@ -590,7 +644,7 @@ function OurFocusForm() {
 
             <p
               onClick={handleClearForm}
-              className=" font-semibold text-[#008807] text-[16px] cursor-pointer "
+              className="font-semibold text-[#008807] text-[16px] cursor-pointer"
             >
               Clear form
             </p>
