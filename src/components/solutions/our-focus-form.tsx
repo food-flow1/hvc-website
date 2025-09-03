@@ -424,7 +424,7 @@ interface FormData {
   contactTime: string;
   subscriptionType: string;
   referralInterest: string[];
-  contactMethod: string;
+  contactMethods: string;
 }
 
 function OurFocusForm() {
@@ -438,7 +438,7 @@ function OurFocusForm() {
     contactTime: "",
     subscriptionType: "",
     referralInterest: [],
-    contactMethod: "",
+    contactMethods: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -515,8 +515,8 @@ function OurFocusForm() {
         },
         {
           objectTypeId: "0-1",
-          name: "contact_method",
-          value: formData.contactMethod,
+          name: "contact_methods",
+          value: formData.contactMethods,
         },
       ],
       context: {
@@ -595,7 +595,7 @@ function OurFocusForm() {
       contactTime: "",
       subscriptionType: "",
       referralInterest: [],
-      contactMethod: "",
+      contactMethods: "",
     });
   };
 
@@ -842,7 +842,7 @@ function OurFocusForm() {
               <select
                 id="contactMethod"
                 name="contactMethod"
-                value={formData.contactMethod}
+                value={formData.contactMethods}
                 onChange={handleInputChange}
                 className="w-full px-1 py-3  border-b border-b-[#EBEBEB] rounded-lg focus:ring-2 focus:ring-[#9DC655] focus:border-[#9DC655] transition-colors"
               >
