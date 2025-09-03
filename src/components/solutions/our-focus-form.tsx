@@ -418,7 +418,7 @@ interface FormData {
   firstName: string;
   lastName: string;
   phone: string;
-  businessEmail: string;
+
   package: string[];
   comments: string;
   contactTime: string;
@@ -433,7 +433,6 @@ function OurFocusForm() {
     firstName: "",
     lastName: "",
     phone: "",
-    businessEmail: "",
     package: [],
     comments: "",
     contactTime: "",
@@ -516,7 +515,7 @@ function OurFocusForm() {
         },
         {
           objectTypeId: "0-1",
-          name: "preferred_contact_method",
+          name: "contact_method",
           value: formData.contactMethod,
         },
       ],
@@ -590,7 +589,7 @@ function OurFocusForm() {
       firstName: "",
       lastName: "",
       phone: "",
-      businessEmail: "",
+
       package: [],
       comments: "",
       contactTime: "",
@@ -799,7 +798,7 @@ function OurFocusForm() {
                     className="flex items-center space-x-3 cursor-pointer"
                   >
                     <input
-                      type="checkbox"
+                      type="radio"
                       value={option}
                       checked={formData.referralInterest.includes(option)}
                       onChange={(e) =>
