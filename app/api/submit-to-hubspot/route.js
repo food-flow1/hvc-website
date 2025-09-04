@@ -650,7 +650,7 @@ export async function POST(request) {
         { name: "subscription_type", value: formData.subscriptionType || "" },
         { name: "preferred_packages", value: Array.isArray(formData.package) ? formData.package.join("; ") : "" },
         { name: "referral_interest", value: formData.referralInterest || "" }, // Now it's a string, not array
-        { name: "preferred_contact_method", value: formData.contactMethod || "" }, // Fixed field name
+        { name: "contact_methods", value: formData.contactMethod || "" }, // Fixed field name
       ];
       allFields = [...baseFields, ...foodFreedomFields];
     } else {
