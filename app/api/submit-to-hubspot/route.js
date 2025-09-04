@@ -656,7 +656,8 @@ export async function POST(request) {
     } else {
       // Add Farm Fuel specific fields
       const farmFuelFields = [
-        { name: "farm_fuel_interests", value: Array.isArray(formData.interests) ? formData.interests.join("; ") : "" },
+        { name: "interests", value: Array.isArray(formData.interests) ? formData.interests.join("; ") : "" },
+                { name: "contact_methods", value: formData.contactMethod || "" }, 
         { name: "preferred_contact_time", value: formData.contactTime || "" },
       ];
       allFields = [...baseFields, ...farmFuelFields];
