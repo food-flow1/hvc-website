@@ -7,11 +7,12 @@ import { theme } from "@/src/components/ui/theme";
 import Header from "@/src/components/layout/header";
 import Footer from "@/src/components/layout/footer";
 import Script from "next/script";
+import { ToastContainer } from "react-toastify";
 
-const instrumentSans = Instrument_Sans({
-  variable: "--font-instrument-sans",
-  subsets: ["latin"],
-});
+// const instrumentSans = Instrument_Sans({
+//   // variable: "--font-instrument-sans",
+//   subsets: ["latin"],
+// });
 
 // Add your custom font here
 
@@ -42,7 +43,20 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${instrumentSans.variable}  antialiased`}>
+      <body className={`  antialiased`}>
+        {/* ${instrumentSans.variable} */}
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
         <MantineProvider theme={theme}>
           <Script
             type="text/javascript"

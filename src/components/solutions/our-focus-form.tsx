@@ -412,36 +412,36 @@
 
 import clsx from "clsx";
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import { toast } from "react-toastify";
 
 interface FormData {
   email: string;
-  firstName: string;
-  lastName: string;
+  firstname: string;
+  lastname: string;
   phone: string;
+  preferred_packages: string[];
+  subscription_type: string;
+  referral_interest: string;
 
-  package: string[];
-  comments: string;
-  contactTime: string;
-  subscriptionType: string;
-  referralInterest: string[];
-  contactMethods: string;
+  contact_methods: string;
+  message: string;
 }
 
 function OurFocusForm() {
   const [formData, setFormData] = useState<FormData>({
     email: "",
-    firstName: "",
-    lastName: "",
+    firstname: "",
+    lastname: "",
     phone: "",
-    package: [],
-    comments: "",
-    contactTime: "",
-    subscriptionType: "",
-    referralInterest: [],
-    contactMethods: "",
+    preferred_packages: [],
+    subscription_type: "",
+    referral_interest: "",
+    contact_methods: "",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [terms, setTerms] = useState(false);
 
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -467,9 +467,8 @@ function OurFocusForm() {
   };
 
   const submitToHubSpot = async (formData: FormData) => {
-    // Replace with your actual HubSpot portal ID and form GUID
-    const PORTAL_ID = "146771318";
-    const FORM_GUID = "238901cf-20e8-4214-adb5-07e59ef7d0dc";
+    const PORTAL_ID = "146841102";
+    const FORM_GUID = "2e316d0b-b73d-4e8f-bfe1-2746d41aaefe";
 
     const hubspotData = {
       fields: [
@@ -481,12 +480,12 @@ function OurFocusForm() {
         {
           objectTypeId: "0-1",
           name: "firstname",
-          value: formData.firstName,
+          value: formData.firstname,
         },
         {
           objectTypeId: "0-1",
           name: "lastname",
-          value: formData.lastName,
+          value: formData.lastname,
         },
         {
           objectTypeId: "0-1",
@@ -496,27 +495,28 @@ function OurFocusForm() {
         {
           objectTypeId: "0-1",
           name: "subscription_type",
-          value: formData.subscriptionType,
+          value: formData.subscription_type,
         },
         {
           objectTypeId: "0-1",
           name: "preferred_packages",
-          value: formData.package.join(", "),
+          value: formData.preferred_packages.join(", "),
         },
         {
           objectTypeId: "0-1",
           name: "referral_interest",
-          value: formData.referralInterest.join(", "),
+          value: formData.referral_interest,
         },
+
         {
           objectTypeId: "0-1",
-          name: "comments",
-          value: formData.comments,
+          name: "message",
+          value: formData.message,
         },
         {
           objectTypeId: "0-1",
           name: "contact_methods",
-          value: formData.contactMethods,
+          value: formData.contact_methods,
         },
       ],
       context: {
@@ -556,28 +556,28 @@ function OurFocusForm() {
     // Basic validation
     if (
       !formData.email ||
-      !formData.firstName ||
-      !formData.lastName ||
+      !formData.firstname ||
+      !formData.lastname ||
       !formData.phone
     ) {
-      alert("Please fill in all required fields.");
+      toast.error("Please fill in all required fields.");
       setIsSubmitting(false);
       return;
     }
 
-    if (formData.package.length === 0) {
-      alert("Please select at least one package.");
+    if (formData.preferred_packages.length === 0) {
+      toast.info("Please select at least one package.");
       setIsSubmitting(false);
       return;
     }
 
     try {
       await submitToHubSpot(formData);
-      alert("Thank you for your interest! We will contact you soon.");
+      toast.success("Thank you for your interest! We will contact you soon.");
       handleClearForm();
     } catch (error) {
       console.error("Submission failed:", error);
-      alert("There was an error submitting your form. Please try again.");
+      toast.error("There was an error submitting your form. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -586,17 +586,21 @@ function OurFocusForm() {
   const handleClearForm = () => {
     setFormData({
       email: "",
-      firstName: "",
-      lastName: "",
+      firstname: "",
+      lastname: "",
       phone: "",
+      preferred_packages: [],
 
-      package: [],
-      comments: "",
-      contactTime: "",
-      subscriptionType: "",
-      referralInterest: [],
-      contactMethods: "",
+      message: "",
+      subscription_type: "",
+      referral_interest: "",
+      contact_methods: "",
     });
+    setTerms(false);
+  };
+
+  const handleTermsChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setTerms(e.target.checked);
   };
 
   return (
@@ -666,17 +670,17 @@ function OurFocusForm() {
             {/* Name Fields */}
             <div className=" border border-[#EBEBEB] bg-white px-[25px] py-[20px] rounded-[10px] ">
               <label
-                htmlFor="firstName"
+                htmlFor="firstname"
                 className="block text-sm font-medium text-gray-700 mb-2"
               >
                 First name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
-                id="firstName"
-                name="firstName"
+                id="firstname"
+                name="firstname"
                 required
-                value={formData.firstName}
+                value={formData.firstname}
                 onChange={handleInputChange}
                 className="w-full text-[#000] font-normal text-[16px] px-1  py-3 border-b border-b-[#EBEBEB]  focus:ring-2 focus:ring-[#9DC655] focus:border-[#9DC655]  transition-colors placeholder:text-[#888888] rounded-none "
                 placeholder="Your answer"
@@ -685,17 +689,17 @@ function OurFocusForm() {
 
             <div className=" border border-[#EBEBEB] bg-white px-[25px] py-[20px] rounded-[10px] ">
               <label
-                htmlFor="lastName"
+                htmlFor="lastname"
                 className="block text-sm font-medium text-gray-700 mb-2"
               >
                 Last name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
-                id="lastName"
-                name="lastName"
+                id="lastname"
+                name="lastname"
                 required
-                value={formData.lastName}
+                value={formData.lastname}
                 onChange={handleInputChange}
                 className="w-full text-[#000] font-normal text-[16px] px-1  py-3 border-b border-b-[#EBEBEB]  focus:ring-2 focus:ring-[#9DC655] focus:border-[#9DC655]  transition-colors placeholder:text-[#888888] rounded-none "
                 placeholder="Your answer"
@@ -731,11 +735,11 @@ function OurFocusForm() {
                 Subscription type <span className="text-red-500">*</span>
               </label>
               <select
-                id="subscriptionType"
-                name="subscriptionType"
-                value={formData.subscriptionType}
+                id="subscription_type"
+                name="subscription_type"
+                value={formData.subscription_type}
                 onChange={handleInputChange}
-                className="w-full px-1 py-3  border-b border-b-[#EBEBEB] rounded-lg focus:ring-2 focus:ring-[#9DC655] focus:border-[#9DC655] transition-colors"
+                className="w-full px-1 py-3  border-b border-b-[#EBEBEB] rounded-lg focus:ring-2 focus:ring-[#9DC655] focus:border-[#9DC655] transition-colors text-gray-700"
               >
                 <option value="">Choose</option>
                 <option value="Junior">Junior</option>
@@ -775,8 +779,10 @@ function OurFocusForm() {
                     <input
                       type="checkbox"
                       value={option}
-                      checked={formData.package.includes(option)}
-                      onChange={(e) => handleCheckboxChange(e, "package")}
+                      checked={formData.preferred_packages.includes(option)}
+                      onChange={(e) =>
+                        handleCheckboxChange(e, "preferred_packages")
+                      }
                       className="w-4 h-4 text-[#9DC655] border-gray-300 rounded focus:ring-[#9DC655]"
                     />
                     <span className="text-[#444444]">{option}</span>
@@ -799,11 +805,14 @@ function OurFocusForm() {
                   >
                     <input
                       type="radio"
+                      name="referral_interest"
                       value={option}
-                      checked={formData.referralInterest.includes(option)}
-                      onChange={(e) =>
-                        handleCheckboxChange(e, "referralInterest")
-                      }
+                      checked={formData.referral_interest === option}
+                      onChange={handleInputChange}
+                      // checked={formData.referralInterest.includes(option)}
+                      // onChange={(e) =>
+                      //   handleCheckboxChange(e, "referral_interest")
+                      // }
                       className="w-4 h-4 text-[#9DC655] border-gray-300 rounded focus:ring-[#9DC655]"
                     />
                     <span className="text-[#444444]">{option}</span>
@@ -815,16 +824,16 @@ function OurFocusForm() {
             {/* Comments */}
             <div className="border border-[#EBEBEB] bg-white px-[25px] py-[20px] rounded-[10px] ">
               <label
-                htmlFor="comments"
+                htmlFor="messsage"
                 className="block text-sm font-medium text-gray-700 mb-2"
               >
                 Comments or Questions
               </label>
               <textarea
-                id="comments"
-                name="comments"
+                id="messsage"
+                name="message"
                 rows={1}
-                value={formData.comments}
+                value={formData.message}
                 onChange={handleInputChange}
                 className="w-full text-[#000] font-normal text-[16px] px-1  py-3 border-b border-b-[#EBEBEB]  focus:ring-2 focus:ring-[#9DC655] focus:border-[#9DC655]  transition-colors placeholder:text-[#888888] rounded-none "
                 placeholder="Your answer."
@@ -840,11 +849,11 @@ function OurFocusForm() {
                 Preferred Contact Method <span className="text-red-500">*</span>
               </label>
               <select
-                id="contactMethod"
-                name="contactMethod"
-                value={formData.contactMethods}
+                id="contact_methods"
+                name="contact_methods"
+                value={formData.contact_methods}
                 onChange={handleInputChange}
-                className="w-full px-1 py-3  border-b border-b-[#EBEBEB] rounded-lg focus:ring-2 focus:ring-[#9DC655] focus:border-[#9DC655] transition-colors"
+                className="w-full px-1 py-3  border-b border-b-[#EBEBEB] rounded-lg focus:ring-2 focus:ring-[#9DC655] focus:border-[#9DC655] transition-colors text-gray-700"
               >
                 <option value="">Choose</option>
                 <option value="Phone">Phone</option>
@@ -857,6 +866,8 @@ function OurFocusForm() {
               <input
                 type="checkbox"
                 id="terms"
+                checked={terms}
+                onChange={handleTermsChange}
                 required
                 className="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500 mt-1"
               />
@@ -872,7 +883,7 @@ function OurFocusForm() {
               <button
                 type="button"
                 onClick={handleSubmit}
-                disabled={isSubmitting}
+                disabled={isSubmitting || !terms}
                 className="bg-gradient-to-r from-[#008807] to-green-700 text-white font-medium py-[9px] px-[29px] rounded-lg hover:from-green-700 hover:to-green-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl w-fit disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Submitting..." : "Submit"}

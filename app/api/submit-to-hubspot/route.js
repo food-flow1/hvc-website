@@ -636,7 +636,8 @@ export async function POST(request) {
       { name: "firstname", value: formData.firstName || "" },
       { name: "lastname", value: formData.lastName || "" },
       { name: "phone", value: formData.phone || "" },
-      { name: "message", value: formData.comments || "" }, // Use "message" for comments
+      { name: "comments", value: formData.comments || "" },
+      { name: "contact_methods", value: formData.contactMethod || "" }, 
     ];
 
     // Check if this is the Food Freedom form (has subscription_type)
@@ -657,8 +658,7 @@ export async function POST(request) {
       // Add Farm Fuel specific fields
       const farmFuelFields = [
         { name: "interests", value: Array.isArray(formData.interests) ? formData.interests.join("; ") : "" },
-                { name: "contact_methods", value: formData.contactMethod || "" }, 
-        { name: "preferred_contact_time", value: formData.contactTime || "" },
+        { name: "contact_methods", value: formData.contactMethod || "" }, 
       ];
       allFields = [...baseFields, ...farmFuelFields];
     }

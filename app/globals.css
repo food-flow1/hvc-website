@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
 
 @import "tailwindcss";
+/* @import "tailwindcss/base"; */
+/* @import "tailwindcss/components"; */
+/* @import "tailwindcss/utilities"; */
 
 :root {
   --background: #ffffff;
@@ -64,7 +67,7 @@
 }
 
 .marquee-left {
-  animation-name: scroll-left;
+  animation-name: scroll-left !important;
 }
 
 /* .marquee-container:hover .marquee-row {
