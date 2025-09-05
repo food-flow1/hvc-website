@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
 
 @import "tailwindcss";
-/* @import "tailwindcss/base"; */
-/* @import "tailwindcss/components"; */
-/* @import "tailwindcss/utilities"; */
 
 :root {
   --background: #ffffff;
@@ -59,15 +56,15 @@
   display: flex;
   align-items: center;
   padding: 40px 0;
-  animation: 20s linear infinite;
+  /* animation: 20s linear infinite; */
 }
 
 .marquee-right {
-  animation-name: scroll-right;
+  animation: scroll-right 20s linear infinite;
 }
 
 .marquee-left {
-  animation-name: scroll-left !important;
+  animation: scroll-left 20s linear infinite !important;
 }
 
 /* .marquee-container:hover .marquee-row {
