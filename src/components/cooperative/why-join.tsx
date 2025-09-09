@@ -54,13 +54,19 @@ function WhyJoin() {
               </article>
             </div>
             <div className="flex gap-[10px] mt-8">
-              <Link href="https://forms.gle/EkXX6Yn7WK3Kv1aVA">
+              <Link
+                href="https://forms.gle/EkXX6Yn7WK3Kv1aVA"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button variant="secondary" size="lg">
                   Join now
                 </Button>
               </Link>
               <Link
                 href="https://forms.gle/EkXX6Yn7WK3Kv1aVA"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center p-[6px] border border-[#141414] rounded-[8px] w-[38px] h-[38px]"
               >
                 <HiArrowUpRight className="cursor-pointer" color="#141414" />
