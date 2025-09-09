@@ -8,38 +8,12 @@ import { FaFacebook, FaLinkedinIn, FaTiktok } from "react-icons/fa";
 import { BsInstagram, BsYoutube } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
 import { Button } from "../ui/mantine/buttons";
+import { FormEvent, useState } from "react";
+import { toast } from "react-toastify";
 
-const navList = [
-  {
-    text: "About HVC",
-    link: "/",
-  },
-  {
-    text: "Co-operatives",
-    link: "/",
-  },
-  {
-    text: "Solutions",
-    link: "/solutions",
-    children: [
-      { text: "Financial Services", link: "/solutions/financial-services" },
-      { text: "Technology Solutions", link: "/solutions/technology" },
-      { text: "Consulting", link: "/solutions/consulting" },
-      {
-        text: "Digital Transformation",
-        link: "/solutions/digital-transformation",
-      },
-    ],
-  },
-  {
-    text: "Career at HVC",
-    link: "/",
-  },
-  {
-    icon: "News & Media",
-    link: "/",
-  },
-];
+interface FormData {
+  email: string;
+}
 
 const socials = [
   {
@@ -81,9 +55,90 @@ const styles = {
 };
 
 function Footer() {
+  const [formData, setFormData] = useState<FormData>({
+    email: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ email: e.target.value });
+  };
+
   const handleSocialClick = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
+
+  const submitToHubSpot = async (formData: FormData) => {
+    const PORTAL_ID = "146841102";
+    const FORM_GUID = "d4c02c15-4104-46be-a4e0-306542b2c3a5";
+
+    const hubspotData = {
+      fields: [
+        {
+          name: "email",
+          value: formData.email,
+        },
+      ],
+      context: {
+        pageUri: window.location.href,
+        pageName: "Email Input",
+      },
+    };
+
+    try {
+      const response = await fetch(
+        `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_GUID}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(hubspotData),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      console.error("HubSpot submission error:", error);
+      throw error;
+    }
+  };
+  const isValidEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    if (!formData.email) {
+      toast.error("Please enter your email");
+      setIsSubmitting(false);
+      return;
+    }
+    if (!isValidEmail(formData.email)) {
+      toast.error("Please enter a valid email address");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const result = await submitToHubSpot(formData);
+      toast.success("Thank you for subscribing!");
+      setFormData({ email: "" });
+    } catch (error) {
+      toast.error("Failed to subscribe. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <main>
       <GrowthSection />
@@ -101,9 +156,20 @@ function Footer() {
             </article>
 
             <div className=" flex  gap-[15px] w-full flex-1  ">
-              <TextInput styles={styles} placeholder="Enter your email" />
+              <TextInput
+                styles={styles}
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleChange}
+              />
               <div className=" ">
-                <Button variant="secondary" size="footer" className=" w-fit">
+                <Button
+                  variant="secondary"
+                  size="footer"
+                  className=" w-fit"
+                  onClick={handleSubmit}
+                  disabled={isSubmitting}
+                >
                   Subscribe
                 </Button>
               </div>
