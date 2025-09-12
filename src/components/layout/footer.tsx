@@ -257,13 +257,13 @@ function Footer() {
 
                 <ul className=" flex flex-col gap-[16px] list-none ">
                   <li className="text-[#ddd] font-normal text-[16px]">
-                    +1 701 358 2142
+                    +234 912 220 3166
                   </li>
                   <li className="text-[#ddd] font-normal text-[16px]">
-                    +1 701 358 2143
+                    +234 808 513 4177
                   </li>
                   <li className="text-[#ddd] font-normal text-[16px]">
-                    info@hvc.ng.com
+                    hello@hvc.project.com
                   </li>
                 </ul>
               </div>

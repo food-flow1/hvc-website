@@ -11,10 +11,9 @@ function Testimonial() {
   const testimonials = [
     {
       id: 1,
-      name: "Mark Linberg",
-      title: "CEO of Artana",
-      text: "Working with HVC has transformed the way we operate. Their sustainable approach and reliable delivery have made them an essential part of our supply chain.",
-      image: "test1.png",
+      name: "Mr Kay,",
+      title: " Farmer",
+      text: "A great interface and very easy easy to navigate, a great asset tothe food chain as it connects farmers to food processors and consumers with less stress and fast timing, hence, enabling fast processing of produce and reducing worries of farmers. It's a win-win situation for all parties and a great digital asset to work with for all, a great development this is..",
       quoteImage: "quotes-border.png",
       bgColor: "bg-[#FAFAFA]",
       textColor: "text-[#000]",
@@ -24,49 +23,74 @@ function Testimonial() {
     },
     {
       id: 2,
-      name: "Lisa Rhouther",
-      title: "",
-      text: "Their team brings not only expertise but real care for the land and the farmers.",
-      image: "lisa.png",
+      name: "MoyinOluwa A,",
+      title: "Processor",
+      text: "Food Flow Africa is a game-changer! I love how easy it is to use and how it connects farmers directly to suppliers, logistics, and markets—all in one place. It's practical, efficient, and exactly what the agricultural sector in Africa needs. A user testimonials or success stories to build trust and showcase real-world value and multilingual support would make it even better. Great work to the team behind this!",
+      quoteImage: "quotes-border.png",
       bgColor: "bg-[#000]",
       textColor: "text-[#fff]",
       nameColor: "text-[#fff]",
-      layout: "bottom",
+      layout: "top",
     },
     {
       id: 3,
-      name: "Rebecca Truj",
-      title: "",
-      text: "We've seen measurable improvements in both crop quality and operational efficiency since partnering with them.",
-      image: "rubecca.png",
+      name: "Alhaji Abdulrahim Yahaya Onipe,",
+      title: "Cooperative member",
+      text: "I sincerely thank the management of Harvest Value Chain Cooperative Society for this remarkable initiative. It is a great step that will benefit not just us, but the country at large. I pray the cooperative continues to grow from strength to strength, and I look forward to more impactful engagements and opportunities for wider outreach.",
+      quoteImage: "quotes-border.png",
       bgColor: "bg-[#fff]",
       textColor: "text-[#000]",
       nameColor: "text-[#000]",
-      layout: "bottom",
+      layout: "top",
     },
     {
       id: 4,
-      name: "John Smith",
-      title: "Farm Manager",
-      text: "The innovative solutions and dedicated support from HVC have revolutionized our farming practices.",
-      image: "test1.png",
+      name: "Pst Mrs Abayomi Elizabeth Mosunmola Onipe,",
+      title: "Cooperative member",
+      text: "When individuals come together as a cooperative, they can pool their limited resources to achieve greater results than they could alone. For example, while ₦1,000 may not do much individually, 10 members contributing ₦1,000 each can collectively raise ₦10,000—making bigger, more impactful actions possible.",
+      quoteImage: "quotes-border.png",
       bgColor: "bg-[#2d5016]",
       textColor: "text-[#fff]",
       nameColor: "text-[#fff]",
-      layout: "bottom",
+      layout: "top",
     },
-    // {
-    //   id: 5,
-    //   name: "Sarah Johnson",
-    //   title: "Agricultural Consultant",
-    //   text: "HVC's commitment to sustainable agriculture and community development is truly inspiring.",
-    //   image: "lisa.png",
-    //   bgColor: "bg-[#9DC655]",
-    //   textColor: "text-[#000]",
-    //   nameColor: "text-[#000]",
-    //   layout: "top",
-    // },
+    {
+      id: 5,
+      name: "Brandlocus,",
+      title: "Business stakeholder",
+      text: "Working with Harvest Value Chain Ltd (HVC) has been a deeply rewarding experience. As the team behind the business development and strategy, we've had the privilege of shaping ideas into impactful systems that serve farmers and members across the value chain. HVC's vision, commitment, and openness to innovation have made our work not only productive but inspiring. We're proud to be part of this journey and excited about the continued growth and transformation ahead.",
+      quoteImage: "quotes-border.png",
+      bgColor: "bg-[#9DC655]",
+      textColor: "text-[#000]",
+      nameColor: "text-[#000]",
+      layout: "top",
+    },
+    {
+      id: 6,
+      name: "Shakirudeen Abdulazeez,",
+      title: "Manager",
+      text: "Being part of HVC has been a transformative journey for me—not just as a manager but also as a farmer. Through my role, I've had the opportunity to meet people, gain hands-on experience, and develop new skills in business and cooperative development. I'm proud of what we're building together at HVC. The impact is real, and I look forward to even more progress as we continue to grow and reach more people",
+      quoteImage: "quotes-border.png",
+      bgColor: "bg-[#9DC655]",
+      textColor: "text-[#000]",
+      nameColor: "text-[#000]",
+      layout: "top",
+    },
   ];
+
+  const getInitials = (name: string) => {
+    const cleanName = name.replace(/,/g, "").trim();
+    const words = cleanName.split(" ");
+
+    if (words.length >= 2) {
+      const firstInitial = words[0].charAt(0);
+      const lastInitial = words[words.length - 1].charAt(0);
+      return (firstInitial + lastInitial).toUpperCase();
+    } else if (words.length === 1) {
+      return words[0].substring(0, 2).toUpperCase();
+    }
+    return "HV";
+  };
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -141,15 +165,19 @@ function Testimonial() {
                         <figure className="">
                           <img src={testimonial.quoteImage} alt="quote" />
                         </figure>
-                        <figure className=" -ml-[10px]">
-                          <img src={testimonial.image} alt={testimonial.name} />
-                        </figure>
+                        <div className="-ml-[10px] w-12 h-12 bg-[#035925] rounded-full flex items-center justify-center">
+                          <span className="text-white font-bold text-sm">
+                            {getInitials(testimonial.name)}
+                          </span>
+                        </div>
                       </section>
                     )}
                     {!testimonial.quoteImage && (
-                      <figure className="">
-                        <img src={testimonial.image} alt={testimonial.name} />
-                      </figure>
+                      <div className="w-12 h-12 bg-[#035925] rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold text-sm">
+                          {getInitials(testimonial.name)}
+                        </span>
+                      </div>
                     )}
 
                     <p
@@ -180,9 +208,11 @@ function Testimonial() {
                     "{testimonial.text}"
                   </h5>
                   <div className=" flex gap-[14px] items-center">
-                    <figure className="">
-                      <img src={testimonial.image} alt={testimonial.name} />
-                    </figure>
+                    <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">
+                        {getInitials(testimonial.name)}
+                      </span>
+                    </div>
 
                     <p
                       className={`${testimonial.nameColor} text-[16px] font-medium`}

@@ -32,7 +32,7 @@ function Mission() {
           flex: 1,
         }}
       >
-        <section className=" flex justify-between flex-col">
+        <section className=" flex justify-between flex-col flex-1">
           <Link
             href="/cooperatives"
             className=" flex gap-2 justify-end items-center"
