@@ -283,8 +283,9 @@ function Footer() {
         </section>
 
         <div className=" flex justify-between items-center pt-[20px] ">
-          <p className="font-normal text-[14px] text-[#ddd] ">
-            Copyright © 2025 Harvest Value Chain. All rights reserved.
+          <p className="font-normal text-[14px] text-[#ddd]">
+            Copyright © {new Date().getFullYear()} Harvest Value Chain. All
+            rights reserved.
           </p>
           <article className=" flex  gap-[42px] items-center max-[434px]:hidden">
             <p className="font-normal text-[14px] text-[#ddd]">
