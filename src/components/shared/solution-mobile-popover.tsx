@@ -6,17 +6,17 @@ import Link from "next/link";
 
 const dropList = [
   {
-    text: "HVC Farm fuel",
+    text: "HVC FarmFuel",
     subText: "Turning waste into clean energy",
     link: "/solutions",
   },
   {
-    text: "HVC Food flow",
+    text: "HVC FoodFlow",
     subText: "Connecting farmers to food processors",
     link: "/solutions/food-flow",
   },
   {
-    text: "HVC Food freedom",
+    text: "HVC FoodFreedom",
     subText: "Sustainable food access for all",
     link: "/solutions/food-freedom",
   },

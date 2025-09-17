@@ -46,7 +46,7 @@ function Value() {
           tagColour="#141414"
           subText="Our Core Values"
           subTextColor="#141414"
-          description="At Harvest Value Chain, our commitment to excellence begins with our core values. They shape the way we farm, partner, innovate, and grow. From integrity in every transaction to sustainability in every harvest, these values define who we are — and how we serve communities, drive innovation, and transform agriculture into a force for good. As we scale across Nigeria and beyond, our values remain constant: people-first, purpose-driven, and proudly rooted in impact."
+          description="At Harvest Value Chain, our commitment to excellence begins with our core values. They shape the way we farm, partner, innovate, and grow. From integrity in every transaction to sustainability in every harvest, these values define who we are, and how we serve communities, drive innovation, and transform agriculture into a force for good. As we scale across Nigeria and beyond, our values remain constant: people-first, purpose-driven, and proudly rooted in impact."
           descriptionColor="#444444"
           tagBg="#d6d9cf"
         />

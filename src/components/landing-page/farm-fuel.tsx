@@ -27,7 +27,7 @@ function FarmFuel() {
         <section className=" flex flex-col gap-[32px]">
           <article className=" flex flex-col gap-2">
             <h5 className=" text-[clamp(24px,2.5vw,48px)] font-semibold text-[#141414] ">
-              Farm Fuel
+              FarmFuel
             </h5>
             <p className=" text-[#585858] font-medium text-[16px]">
               Turning waste into clean energy
@@ -38,13 +38,13 @@ function FarmFuel() {
             and organic fertilizer, helping farmers reduce waste disposal costs
             while providing clean, affordable energy. This solution not only
             powers rural households and farms but also promotes sustainable
-            agricultural practices by offering nutrient-rich organic fertilizer.
+            agricultural practices by offering nutrient rich organic fertilizer.
           </p>
         </section>
 
         <Link href="/solutions" className=" cursor-pointer">
           <Button variant="secondary" size="lg" className=" w-fit">
-            Learn more about farm fuel
+            Learn more about FarmFuel
           </Button>
         </Link>
       </div>

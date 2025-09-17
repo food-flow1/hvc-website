@@ -216,7 +216,7 @@ function Footer() {
             <section className=" flex justify-between max-[456px]:grid max-[456px]:grid-cols-2">
               <div className=" flex flex-col gap-[clamp(1.2rem,1.90vw,1.5rem)]">
                 <h2 className=" text-[16px]font-normal text-[#fff]">
-                  What we do
+                  Quick Links
                 </h2>
 
                 <ul className=" flex flex-col gap-[16px] decoration-none list-none">
@@ -234,9 +234,12 @@ function Footer() {
                 </ul>
               </div>
               <div className=" flex flex-col gap-[clamp(1.2rem,1.90vw,1.5rem)]">
-                <h2 className=" text-[16px] font-normal text-[#fff]">
-                  What we do
-                </h2>
+                <Link
+                  href="/cooperatives"
+                  className=" text-[16px] font-normal text-[#fff]"
+                >
+                  Cooperatives
+                </Link>
 
                 <ul className=" flex flex-col gap-[16px] list-none ">
                   <Link href="/cooperatives">
@@ -246,7 +249,9 @@ function Footer() {
                   </Link>
 
                   <Link href="/news">
-                    <li className="text-[#ddd] font-normaltext-[16px]">Blog</li>
+                    <li className="text-[#ddd] font-normaltext-[16px]">
+                      News and Media
+                    </li>
                   </Link>
                 </ul>
               </div>
@@ -262,9 +267,14 @@ function Footer() {
                   <li className="text-[#ddd] font-normal text-[16px]">
                     +234 808 513 4177
                   </li>
-                  <li className="text-[#ddd] font-normal text-[16px]">
-                    hello@hvc.project.com
-                  </li>
+                  <Link
+                    href="mailto:hello@hvcproject.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#ddd] font-normal text-[16px]"
+                  >
+                    hello@hvcproject.com
+                  </Link>
                 </ul>
               </div>
             </section>

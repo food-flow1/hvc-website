@@ -5,18 +5,18 @@ const benefits = [
   {
     name: "Renewable Energy",
     details:
-      "Biogas produced through FarmFuel provides a clean and renewable alternative to traditional fuels. It’s cost-effective and readily available for rural households and agribusinesses, reducing dependence on firewood, kerosene, or coal. By harnessing waste to produce energy, FarmFuel enhances energy access, especially in off-grid rural areas, empowering communities with reliable energy for cooking, heating, and small-scale agribusiness operations.",
+      "Biogas produced through FarmFuel provides a clean and renewable alternative to traditional fuels. It’s cost-effective and readily available for rural households and agribusinesses, reducing dependence on firewood, kerosene, or coal. By harnessing waste to produce energy, FarmFuel enhances energy access, especially in off-grid rural areas, empowering communities with reliable energy for cooking, heating, and small-scale agribusiness operations.",
   },
 
   {
     name: "Waste Reduction",
     details:
-      "FarmFuel efficiently uses crop by-products that would otherwise be wasted, addressing both waste disposal and environmental concerns. By preventing waste from decomposing openly, FarmFuel minimizes methane emissions—a potent greenhouse gas—contributing positively to the climate. This approach not only reduces the carbon footprint of agricultural operations but also aligns with sustainable waste management goals.",
+      "FarmFuel efficiently uses crop by-products that would otherwise be wasted, addressing both waste disposal and environmental concerns. By preventing waste from decomposing openly, FarmFuel minimizes methane emissions, a potent greenhouse gas, contributing positively to the climate. This approach not only reduces the carbon footprint of agricultural operations but also aligns with sustainable waste management goals.",
   },
   {
     name: "Organic Fertilizer",
     details:
-      "The digestate produced in the anaerobic process is rich in essential nutrients like nitrogen, potassium, and phosphorus, which promote healthy soil and crop growth. This organic fertilizer is distributed back to farmers, who benefit from improved soil health and higher crop yields, reducing reliance on chemical fertilizers and enhancing the sustainability of their agricultural practices.",
+      "The digestate produced in the anaerobic process is rich in essential nutrients like nitrogen, potassium, and phosphorus, which promote healthy soil and crop growth.This organic fertilizer is distributed back to farmers, who benefit from improved soil health and higher crop yields, reducing reliance on chemical fertilizers and enhancing the sustainability of their agricultural practices.",
   },
 ];
 

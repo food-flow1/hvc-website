@@ -14,7 +14,7 @@ function Solutions() {
     // solution1
     <main className=" flex flex-col">
       <SolutionsLayout
-        tag="HVC Farm fuel"
+        tag="HVC FarmFuel"
         title="Agro-Waste-to-Energy Solution"
         description={[
           "FarmFuel by Harvest Value Chain Limited (HVC) is our agro-waste-to-energy solution that converts agricultural waste into renewable energy. This initiative not only provides clean power to rural communities but also supports sustainable farming through organic fertilizer production.",

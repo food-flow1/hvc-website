@@ -7,13 +7,13 @@ import { HiArrowUpRight } from "react-icons/hi2";
 const missionList = [
   {
     name: "Our Mission",
-    text: "To create sustainable agricultural value chains that empower farmers, enhance food security, and deliver premium products to local and international markets.",
+    text: " To become Africa’s leading catalyst for inclusive and sustainable agricultural value chains that empower smallholder farmers and strengthen food systems.",
     img: "/mission.png",
   },
 
   {
     name: "Our Vision",
-    text: "Agro Innovation",
+    text: "To enhance agricultural productivity, reduce post-harvest losses, and facilitate fair and efficient market access by organizing smallholder farmers, deploying technology, and building strong cooperative systems.",
     img: "/vision.png",
   },
 ];

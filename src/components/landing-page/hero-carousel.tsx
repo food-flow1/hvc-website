@@ -42,17 +42,14 @@ function HeroCarousel() {
             clipPath: "polygon(0 0, 100% 0, 79% 100%, 0 100%)",
           }}
         >
-          <div className=" flex gap-[10px] items-center">
+          <Link href="/about" className=" flex gap-[10px] items-center">
             <Button variant="secondary" size="lg">
-              Read more
+              Learn more
             </Button>
-            <Link
-              href="/about"
-              className=" flex items-center justify-center p-[6px] border border-[#9DC655] rounded-[8px] w-[38px] h-[38px]"
-            >
+            <div className=" flex items-center justify-center p-[6px] border border-[#9DC655] rounded-[8px] w-[38px] h-[38px]">
               <HiArrowUpRight className=" cursor-pointer" />
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
       </div>
 

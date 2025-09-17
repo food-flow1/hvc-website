@@ -17,19 +17,14 @@ function WhyChooseUs() {
               Why choose us
             </h3>
             <p className=" text-[16px] text-[#444444] font-normal text-center">
-              We’re more than just a farm — we’re your trusted partner in
-              sustainable agriculture.
+              We&apos;re more than just a farm, we&apos;re your trusted partner
+              in sustainable agriculture.
             </p>
           </div>
         </div>
 
         <section className=" flex gap-1  max-[981px]:flex-col items-center justify-center max-[981px]:gap-[20px]  ">
-          <div
-            className=" p-[clamp(16px,1vw,20px)] flex flex-col rounded-[10px] bg-[#000000] w-[310px] rotate-10  max-[981px]:rotate-none clip-slant1  "
-            // style={{ clipPath: "polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)" }}
-            // style={{ clipPath: "polygon(8% 0%, 100% 0%, 98% 100%, 0% 100%)" }}
-            // style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%" }}
-          >
+          <div className=" p-[clamp(16px,1vw,20px)] flex flex-col rounded-[10px] bg-[#000000] w-[310px] rotate-10  max-[981px]:rotate-none clip-slant1  ">
             <figure>
               <Image
                 src="/seedling.png"
@@ -43,8 +38,10 @@ function WhyChooseUs() {
                 Sustainable Practices
               </p>
               <p className=" text-[16px] font-normal leading-[24px] text-white">
-                From pesticide-free farming to smart water use, we’re committed
-                to methods that respect the planet and future generations.
+                At HVC, sustainability isn&apos;t just a buzzword, it&apos;s our
+                foundation. From climate-smart farming to responsible resource
+                use, we prioritize methods that protect the earth today while
+                safeguarding food security for tomorrow.
               </p>
             </article>
           </div>
@@ -63,8 +60,10 @@ function WhyChooseUs() {
                 Global Expertise
               </p>
               <p className=" text-[16px] font-normal leading-[24px] text-[#585858]">
-                Years of international experience delivering scalable
-                agricultural solutions across diverse climates and regions.
+                We bring years of international experience to the table,
+                delivering scalable agricultural solutions that adapt to diverse
+                climates, markets, and communities, ensuring lasting impact
+                across borders.
               </p>
             </article>
           </div>
@@ -72,11 +71,6 @@ function WhyChooseUs() {
           <div
             className=" p-[clamp(16px,1vw,20px)] flex flex-col rounded-[10px] bg-[#035925] w-[310px] 
          -rotate-10 max-[981px]:rotate-none clip-slant2"
-            // style={{ clipPath: "polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
-            // style={{ clipPath: "polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%)" }}
-            // style={{
-            //   clipPath: "polygon(9% 0%, 100% 0%, 100% 100%, -17% 106%)",
-            // }}
           >
             <figure>
               <Image
@@ -91,8 +85,10 @@ function WhyChooseUs() {
                 Trusted by Thousands
               </p>
               <p className=" text-[16px] font-normal leading-[24px] text-white">
-                From pesticide-free farming to smart water use, we’re committed
-                to methods that respect the planet and future generations.
+                Our growing community of farmers, partners, and subscribers
+                trust HVC because we deliver more than promises, we deliver
+                results, creating real change in livelihoods, markets, and food
+                systems.
               </p>
             </article>
           </div>

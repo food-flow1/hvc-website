@@ -33,7 +33,7 @@ function FoodFreedomHero() {
         <div className={clsx("flex flex-col gap-1 flex-1")}>
           <article className="py-[7px] px-[11px] rounded-[8px] w-fit bg-[#353e26]">
             <p className="text-[10px] font-medium text-white">
-              HVC Food freedom
+              HVC FoodFreedom
             </p>
           </article>
 
@@ -44,22 +44,22 @@ function FoodFreedomHero() {
 
             <article className="flex flex-col gap-[30px]">
               <h4 className=" font-normal text-[16px] text-white">
-                Food Freedom offers a range of membership plans tailored for
-                different lifestyles, from budget-friendly student packages to
-                family bundles. Choose your preferred plan, and we’ll deliver a
-                variety of food items, bonus essentials, and even branded gifts
-                directly to your doorstep each month.
+                FoodFreedom offers a range of membership plans tailored for
+                different lifestyles, from budget friendly student packages to
+                family bundles. Choose your preferred plan, and we&apos;ll
+                deliver a variety of food items, bonus essentials, and even
+                branded gifts directly to your doorstep each month.
               </h4>
 
               <section className="flex flex-col gap-[10px]">
                 <h2 className="font-semibold text-[20px] text-white">
-                  What You Get with Food Freedom
+                  What You Get with FoodFreedom
                 </h2>
 
                 <ul className="space-y-5  ">
                   {items.map((item, index) => (
                     <li key={index} className="leading-relaxed">
-                      <span className=" font-medium text-[16px] text-white">
+                      <span className=" font-semibold text-[16px] text-white">
                         {index + 1}. {item.title} –{" "}
                       </span>
                       <span className=" font-normal text-[16px]">

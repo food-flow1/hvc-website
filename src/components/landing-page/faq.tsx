@@ -11,27 +11,27 @@ function Faq() {
     {
       value: "How do i sign up for Foodflow?",
       description:
-        "We believe in harnessing the power of nature and technology to create a sustainable future for food production, energy, and economic growth.",
+        "Simply visit foodflow.africa, click on Get Started/Sign Up, and complete the quick registration form to get started.",
     },
     {
       value: "How do i make payment?",
       description:
-        "We believe in harnessing the power of nature and technology to create a sustainable future for food production, energy, and economic growth.",
+        "Payments can be made securely online through our approved gateways or via bank transfer. Instructions are provided at checkout.",
     },
     {
       value: "What is the farm fuel all about?",
       description:
-        "We believe in harnessing the power of nature and technology to create a sustainable future for food production, energy, and economic growth.",
+        "Farm Fuel is our clean energy initiative that converts agro-waste into affordable renewable energy for farmers and processors. You can read more HERE [Link to Farm Fuel]",
     },
     {
       value: "How do i contact HVC?",
       description:
-        "We believe in harnessing the power of nature and technology to create a sustainable future for food production, energy, and economic growth.",
+        "You can reach us via email (hello@hvcproject.com), phone (+234 912 220 3166 or +234 808 513 4177), we’re always ready to assist.",
     },
     {
       value: "Are all farmers eligible to join HVCCS?",
       description:
-        "We believe in harnessing the power of nature and technology to create a sustainable future for food production, energy, and economic growth.",
+        " Yes, all farmers are welcome. Once you register, our team will guide you through the onboarding process.",
     },
   ];
 

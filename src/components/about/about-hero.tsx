@@ -21,7 +21,7 @@ function AboutHero() {
 
             <p className="text-[16px] text-white leading-relaxed max-w-[625px]">
               Harvest Value Chain Limited (HVC) was founded in 2022 with a clear
-              vision: to transform Nigeria's agricultural landscape by
+              vision: to transform Africa's agricultural landscape by
               integrating <strong>Technology</strong> into{" "}
               <strong>sustainable farming</strong> and{" "}
               <strong>processing</strong> to optimize the agricultural value
@@ -58,7 +58,7 @@ function AboutHero() {
             <p className="text-[16px] text-white leading-relaxed max-w-[625px]">
               From humble beginnings, Harvest Value Chain Limited (HVC) has
               evolved into a dynamic agribusiness player driving innovation
-              across the agricultural value chain—from farm to market.
+              across the agricultural value chain from farm to market.
             </p>
 
             <div className="">
@@ -68,14 +68,14 @@ function AboutHero() {
               <ul className="text-[16px] text-white leading-relaxed max-w-[625px] ">
                 <li className=" text-white font-normal ">
                   <strong className=" text-[#9DC655] text-semibold text-[16px] ">
-                    • Over 52 hectares of high-yield farmland
+                    • Over 52 hectares of high yield farmland
                   </strong>{" "}
                   dedicated to sustainable cultivation of priority crops.
                 </li>
                 <li className="text-white font-normal">
                   <strong className="text-[#9DC655] text-semibold text-[16px] ">
                     {" "}
-                    • Climate-smart livestock farming
+                    • Climate smart livestock farming
                   </strong>{" "}
                   systems that ensure animal welfare and environmental
                   sustainability.
@@ -83,18 +83,18 @@ function AboutHero() {
                 <li className="text-white font-normal ">
                   <strong className="text-[#9DC655] text-semibold text-[16px] ">
                     {" "}
-                    • Value-add processing units
+                    • Value add processing units
                   </strong>{" "}
-                  that convert raw materials into market-ready products like
+                  that convert raw materials into market ready products like
                   Garri, cassava flour, corn flour, and animal feed, supporting
-                  food security and agro-industrialization.
+                  food security and agro industrialization.
                 </li>
                 <li className="text-white font-normal">
                   <strong className="text-[#9DC655] text-semibold text-[16px]">
                     {" "}
                     • FoodFlow
                   </strong>
-                  , our award-nominated{" "}
+                  , our award nominated{" "}
                   <strong className="text-[#9DC655] text-semibold text-[16px]">
                     Farm-to-Fork Agri-Tech Platform
                   </strong>{" "}
@@ -103,7 +103,7 @@ function AboutHero() {
                 <li className="text-white font-normal">
                   <strong className="text-[#9DC655] text-semibold text-[16px]">
                     {" "}
-                    • A cooperative-based investment model (HVCCG)
+                    • A cooperative based investment model (HVCCG)
                   </strong>{" "}
                   allowing members to co-own agribusiness ventures, access
                   inputs, and enjoy guaranteed market linkage.
@@ -111,7 +111,7 @@ function AboutHero() {
                 <li className=" text-white font-normal">
                   <strong className="text-[#9DC655] text-semibold text-[16px]">
                     {" "}
-                    • Agro-Waste-to-Energy innovation
+                    • Agro Waste to Energy innovation
                   </strong>
                   , piloted through our FarmFuel initiative, converting
                   agricultural waste into clean, renewable energy to power rural
@@ -120,10 +120,10 @@ function AboutHero() {
                 <li className=" text-white font-normal">
                   <strong className=" text-[#9DC655] text-semibold text-[16px]">
                     {" "}
-                    • EU and state-backed projects
+                    • EU and state backed projects
                   </strong>{" "}
                   including farmer data digitization and community training
-                  under CIWACIWA and Kwara State partnerships.
+                  under CIWA and Kwara State partnerships.
                 </li>
                 <li className=" text-white font-normal">
                   <strong className="text-[#9DC655] text-semibold text-[16px]">

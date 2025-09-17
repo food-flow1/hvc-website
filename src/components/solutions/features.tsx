@@ -3,6 +3,7 @@ import TagLayout from "../landing-page/tag-layout";
 import SolutionGrid from "../shared/solution-cards";
 import { Button } from "@mantine/core";
 import { HiArrowUpRight } from "react-icons/hi2";
+import Link from "next/link";
 
 const benefits = [
   {
@@ -39,9 +40,9 @@ function Features() {
         <TagLayout
           tag="Features"
           tagColour="#141414"
-          subText="Why Food flow?"
+          subText="Why FoodFlow?"
           subTextColor="#141414"
-          description="In many agricultural communities, poor logistics, market access challenges, and post-harvest losses disrupt the journey of food from farm to table. Food Flow by HVC addresses these issues by streamlining transportation, enhancing storage solutions, and connecting farmers directly to buyers. This ensures faster distribution, reduces food waste, stabilizes pricing, and strengthens food security across regions—so that what is grown is not lost, but shared."
+          description="In many agricultural communities, poor logistics, market access challenges, and post-harvest losses disrupt the journey of food from farm to table. Food Flow by HVC addresses these issues by streamlining transportation, enhancing storage solutions, and connecting farmers directly to buyers. This ensures faster distribution, reduces food waste, stabilizes pricing, and strengthens food security across regions, so that what is grown is not lost, but shared."
           descriptionColor="#444444"
           tagBg="#dadada"
         />
@@ -53,14 +54,19 @@ function Features() {
           className="mt-8"
         />
       </section>
-      <div className=" flex gap-[10px] justify-end items-center">
+      <Link
+        href="https://www.Foodflow.africa"
+        target="_blank"
+        rel="noopener noreferrer"
+        className=" flex gap-[10px] justify-end items-center"
+      >
         <Button variant="secondary" size="lg" className="w-fit">
-          See Food flow Africa
+          Start with FoodFlow
         </Button>
         <article className=" flex items-center justify-center p-[6px] border border-[#9DC655] rounded-[8px] w-[38px] h-[38px]">
           <HiArrowUpRight className=" cursor-pointer text-[#000]" />
         </article>
-      </div>
+      </Link>
     </div>
   );
 }

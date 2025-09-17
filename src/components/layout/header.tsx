@@ -12,6 +12,10 @@ import clsx from "clsx";
 
 const navList = [
   {
+    text: "Home",
+    link: "/",
+  },
+  {
     text: "About HVC",
     link: "/about",
   },
@@ -31,10 +35,6 @@ const navList = [
   {
     text: "Career at HVC",
     link: "/career",
-  },
-  {
-    text: "News & Media",
-    link: "/news",
   },
 ];
 
@@ -80,9 +80,9 @@ function Header() {
             })}
           </ul>
 
-          <Link href="" className="cursor-pointer">
+          <Link href="/news" className="cursor-pointer">
             <Button variant="primary" size="lg">
-              Let's work together
+              News and Media
             </Button>
           </Link>
         </section>

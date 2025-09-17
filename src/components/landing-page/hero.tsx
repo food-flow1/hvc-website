@@ -28,7 +28,7 @@ function Hero() {
                 {" "}
                 Sustainable{" "}
               </span>
-              Agriculture and Innovation in Nigeria.
+              Agriculture and Innovation in Africa.
             </h3>
             <figure className=" p-5 bg-[#353e26] flex items-center justify-center rounded-full">
               <Image src="/plant.png" alt="logo" width={140} height={140} />

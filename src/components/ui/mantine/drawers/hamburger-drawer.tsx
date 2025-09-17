@@ -185,10 +185,6 @@ const navbar = [
     name: "Career at HVC",
     link: "/career",
   },
-  {
-    name: "News & Media",
-    link: "/news",
-  },
 ];
 
 export const HamburgerDrawer = ({ opened, close }: IDrawer) => {
@@ -277,14 +273,14 @@ export const HamburgerDrawer = ({ opened, close }: IDrawer) => {
             })}
           </div>
 
-          <Link className="" href="/">
+          <Link className="" href="/news">
             <Button
               size="mdd"
               variant="outline-p"
               className="item-center border-[#9dc655] cursor-pointer justify-center leading-[20px] py-[10px] rounded-[8px]  "
               onClick={() => close()}
             >
-              Let's work together
+              News and Media
             </Button>
           </Link>
         </section>

@@ -39,9 +39,9 @@ function CoreValue() {
           <TagLayout
             tag="What drives us"
             tagColour="#141414"
-            subText="Our core values"
+            subText="Our Core Values"
             subTextColor="#141414"
-            description="Committed to Growth, Impact, and SustainabilityAt HVC, agriculture is more than food production, it’s a powerful tool for solving real-world challenges. Our mission is to harness the full potential of agribusiness to address pressing societal issues such as food insecurity, youth unemployment, climate change, and rural poverty.We provide end-to-end agricultural solutions that prioritize innovation, environmental stewardship, and inclusive economic growth. From empowering farmers through technology to transforming waste into renewable energy, we are committed to building systems that serve both people and the planet.We believe sustainable development begins with strong communities. That’s why we actively invest in local partnerships that drive education, health, gender equity, and job creation, using agriculture as a catalyst for long-term social change"
+            description="Committed to Growth, Impact, and Sustainability at HVC, agriculture is more than food production, it's a powerful tool for solving real-world challenges. Our mission is to harness the full potential of agribusiness to address pressing societal issues such as food insecurity, youth unemployment, climate change, and rural poverty. We provide end to end agricultural solutions that prioritize innovation, environmental stewardship, and inclusive economic growth. From empowering farmers through technology to transforming waste into renewable energy, we are committed to building systems that serve both people and the planet.We believe sustainable development begins with strong communities. That’s why we actively invest in local partnerships that drive education, health, gender equity, and job creation, using agriculture as a catalyst for long term social change"
             descriptionColor="#444444"
             tagBg="#d6d9cf"
           />
@@ -53,7 +53,7 @@ function CoreValue() {
             tagColour="#141414"
             subText="Our core values"
             subTextColor="#141414"
-            description="As an agro-tech company, we are driven by our core values"
+            description="As an agro tech company, we are driven by our core values"
             descriptionColor="#444444"
             tagBg="#d6d9cf"
           />

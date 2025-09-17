@@ -25,7 +25,7 @@ const benefits = [
   {
     name: "Unlock Market Across & Off taking Channels",
     details:
-      "We link farmers directly to buyers, processors, and export opportunities—ensuring fair value for their produce",
+      "We link farmers directly to buyers, processors, and export opportunities, ensuring fair value for their produce",
   },
 
   {

@@ -45,10 +45,11 @@ export default function WeDedicated() {
               </h3>
               <div className="flex flex-col gap-[12px]">
                 <p className="text-[clamp(14px,1.2vw,16px)] text-[#fff] font-normal leading-relaxed">
-                  We're not just growing food—we're growing solutions. At HVC,
-                  we deliver comprehensive agricultural services that go beyond
-                  the farm, focusing on innovation, sustainability, and
-                  efficiency at every step of the supply chain.
+                  We&apos;re not just growing food, we&apos;re growing
+                  solutions. At HVC, we deliver comprehensive agricultural
+                  services that go beyond the farm, focusing on innovation,
+                  sustainability, and efficiency at every step of the supply
+                  chain.
                 </p>
                 <p className="text-[clamp(14px,1.2vw,16px)] text-[#fff] font-normal leading-relaxed">
                   We are dedicated to farming in ways that protect our

@@ -28,10 +28,10 @@ function CEO() {
               As we move forward, Harvest Value Chain Limited (HVC) remains
               dedicated to leading the agricultural sector through innovation
               and sustainability. Our upcoming expansion of processing
-              facilities by 2025 will enhance our ability to deliver top-quality
-              products, create jobs, and drive economic growth in our
-              communities. Innovation is at the heart of our operations, and we
-              will continue to adopt cutting-edge technologies to improve
+              facilities by 2026, will enhance our ability to deliver
+              top-quality products, create jobs, and drive economic growth in
+              our communities. Innovation is at the heart of our operations, and
+              we will continue to adopt cutting-edge technologies to improve
               efficiency and product quality. Our commitment to community
               engagement remains strong as we expand our support for local
               farmers and invest in essential infrastructure. With a focus on
@@ -45,7 +45,7 @@ function CEO() {
           <div className="flex flex-col gap-1">
             <h4 className=" text-[clamp(18px,2vw,40px)] font-semibold whitespace-pre-line">
               {" "}
-              {`The Charles\nAdetola`}
+              {`The Charles Adetola`}
             </h4>
             <figure className="w-[40px] h-[40px]">
               <img src="/linkedin-logo.png" alt="linkedin" />

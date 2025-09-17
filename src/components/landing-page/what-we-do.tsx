@@ -19,10 +19,6 @@ function WhatWeDo() {
           <h3 className=" text-white leading-[clamp(35px,1.6vw,40px] font-medium text-[clamp(18px,2vw,40px)] ">
             What we do
           </h3>
-          <p className=" text-[16px] text-[#FAFAFA] font-normal">
-            Have a look through what we do as an agro tech company and start
-            working with us today
-          </p>
         </div>
       </div>
 
@@ -31,7 +27,7 @@ function WhatWeDo() {
         header="Food Flow"
         text="Connecting farmers to food processors"
         details="FoodFlow is a digital platform that bridges the gap between farmers and food processors, facilitating direct transactions and creating a transparent, efficient supply chain. By eliminating intermediaries, FoodFlow ensures fair pricing for farmers and a reliable source of fresh produce for processors, supporting local food production and community empowerment."
-        buttonText="Explore food flow"
+        buttonText="Explore FoodFlow"
         onButtonClick={() => router.push("/solutions/food-flow")}
       />
 
@@ -39,10 +35,10 @@ function WhatWeDo() {
 
       <PictureTextLayout
         image="/food-freedom.png"
-        header="Food Freedom"
+        header="FoodFreedom"
         text="Sustainable food access for all"
-        details="Food Freedom is a subscription-based service that delivers curated food packages monthly, tailored to fit different lifestyles—from students to families and those with dietary needs. Each plan includes staple foods, bonuses, and referral rewards, making food access convenient, affordable, and sustainable for all."
-        buttonText="Discover food freedom"
+        details="Food Freedom is a subscription based service that delivers curated food packages monthly, tailored to fit different lifestyles from students to families and those with dietary needs. Each plan includes staple foods, bonuses, and referral rewards, making food access convenient, affordable, and sustainable for all."
+        buttonText="Discover FoodFreedom"
         onButtonClick={() => router.push("/solutions/food-freedom")}
       />
     </section>

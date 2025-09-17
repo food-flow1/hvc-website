@@ -37,7 +37,7 @@ function WhyJoin() {
               <article className="flex flex-col">
                 <p className="text-[16px] font-normal text-[#444444] mb-4">
                   The Harvest Value Chain Cooperative Society (HVCCS) isn't just
-                  a platform — it's a movement. A trusted support system. A
+                  a platform.it's a movement. A trusted support system. A
                   national alliance of farmers who believe that by working
                   together, we grow faster, stronger, and smarter. When you join
                   HVCCS, you become part of a solution:

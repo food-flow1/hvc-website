@@ -22,21 +22,21 @@ function WeCare() {
       number: "135",
       text: "Farmers",
       details:
-        "We’re more than just farmers—we’re transforming agriculture in Nigeria through innovation, sustainability, and community empowerment.",
+        "We empower farmers  withe the tools, markets, and support they need to thrive,driving innovaton,fair returns, and sustainable growth that uplifts entire communities",
     },
 
     {
       number: "16",
       text: "Partners",
       details:
-        "We care about the land we cultivate, the communities we serve, and the quality of the products we deliver. Our commitment goes beyond agriculture at Harvest Value Chain Limited (HVC).",
+        "Our strength lies in collaboration. Together with our partners, we are building resilient value chains, advancingfood security, and shaping the future of agriculture in Africa.",
     },
 
     {
       number: "869",
       text: "Subscribers",
       details:
-        "From cultivating to livestock farming, advanced food processing, Optimizing agric-value-chain through generating renewable energy from agro-waste, we are redefining what it means to lead in agriculture.",
+        "Beyond numbers our subscribers represent a movement, connected by knowledge, opportunity, and shared impact, at the very heart of transforming food systems.",
     },
   ];
 
@@ -82,8 +82,8 @@ function WeCare() {
                 beyond agriculture at Harvest Value Chain Limited (HVC).
               </p>
               <p className="leading-[28px] font-normal text-[16px] text-[#444444]">
-                We’re more than just farmers—we’re transforming agriculture in
-                Nigeria through innovation, sustainability, and community
+                We’re more than just farmers we’re transforming agriculture in
+                Africa through innovation, sustainability, and community
                 empowerment. From cultivating to livestock farming, advanced
                 food processing, Optimizing agric-value-chain through innovative
                 technologies and even generating renewable energy from
@@ -92,7 +92,7 @@ function WeCare() {
               </p>
             </article>
 
-            <Link href="/about" className=" cursor-pointer">
+            <Link href="/career" className=" cursor-pointer">
               <Button
                 variant="secondary"
                 size="nlg"
