@@ -9,27 +9,27 @@ import { GoPlus } from "react-icons/go";
 function Faq() {
   const faqList = [
     {
-      value: "How do i sign up for Foodflow?",
+      value: "How Do I Sign Up For Foodflow?",
       description:
         "Simply visit foodflow.africa, click on Get Started/Sign Up, and complete the quick registration form to get started.",
     },
     {
-      value: "How do i make payment?",
+      value: "How Do I Make Payment?",
       description:
         "Payments can be made securely online through our approved gateways or via bank transfer. Instructions are provided at checkout.",
     },
     {
-      value: "What is the farm fuel all about?",
+      value: "What Is The FarmFuel All About?",
       description:
         "Farm Fuel is our clean energy initiative that converts agro-waste into affordable renewable energy for farmers and processors. You can read more HERE [Link to Farm Fuel]",
     },
     {
-      value: "How do i contact HVC?",
+      value: "How Do I Contact HVC?",
       description:
         "You can reach us via email (hello@hvcproject.com), phone (+234 912 220 3166 or +234 808 513 4177), we’re always ready to assist.",
     },
     {
-      value: "Are all farmers eligible to join HVCCS?",
+      value: "Are All Farmers Eligible To Join HVCCS?",
       description:
         " Yes, all farmers are welcome. Once you register, our team will guide you through the onboarding process.",
     },

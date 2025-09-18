@@ -4,7 +4,7 @@ import React from "react";
 function CEO() {
   return (
     <div className=" py-[clamp(20px,4vw,79px)] flex items-center justify-center bg-[#FAFAFA]">
-      <section className=" flex items-center    rounded-[16px] bg-[#035925] max-[1116px]:flex-col-reverse  max-[1116px]:bg-none  max-[1116px]:flex-1">
+      <section className=" flex items-center    rounded-[16px] bg-[#035925] max-[1116px]:flex-col  max-[1116px]:bg-none  max-[1116px]:flex-1">
         <div
           className=" px-[29px] py-[40px] w-[480px]  h-[clamp(300px,60vw,550px)] overflow-hidden rounded-[14px] flex  max-[1116px]:w-full    "
           style={{

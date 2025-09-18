@@ -215,7 +215,7 @@ function Footer() {
 
             <section className=" flex justify-between max-[456px]:grid max-[456px]:grid-cols-2">
               <div className=" flex flex-col gap-[clamp(1.2rem,1.90vw,1.5rem)]">
-                <h2 className=" text-[16px]font-normal text-[#fff]">
+                <h2 className=" text-[16px] font-medium text-[#fff]">
                   Quick Links
                 </h2>
 
@@ -256,7 +256,7 @@ function Footer() {
                 </ul>
               </div>
               <div className=" flex flex-col gap-[clamp(1.2rem,1.90vw,1.5rem)] max-[456px]:pt-4">
-                <h2 className=" text-[16px] font-normal text-[#fff]">
+                <h2 className=" text-[16px] font-medium text-[#fff]">
                   Support
                 </h2>
 
