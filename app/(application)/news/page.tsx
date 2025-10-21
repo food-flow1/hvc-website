@@ -48,7 +48,8 @@ export default function NewsMedia() {
       try {
         setLoading(true);
         const res = await fetch(
-          "https://www.hvcproject.com/wp-json/wp/v2/posts?per_page=5&_embed=true",
+          // "https://www.hvcproject.com/wp-json/wp/v2/posts?per_page=5&_embed=true",
+          "https://blog.hvcproject.com/wp-json/wp/v2/posts?per_page=5&_embed=true",
           {
             next: { revalidate: 60 },
           }
