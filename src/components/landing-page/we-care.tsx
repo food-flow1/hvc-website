@@ -22,7 +22,7 @@ function WeCare() {
       number: "135",
       text: "Farmers",
       details:
-        "We empower farmers  withe the tools, markets, and support they need to thrive,driving innovaton,fair returns, and sustainable growth that uplifts entire communities",
+        "We empower farmers  with the tools, markets, and support they need to thrive,driving innovaton,fair returns, and sustainable growth that uplifts entire communities",
     },
 
     {

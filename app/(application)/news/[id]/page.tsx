@@ -70,7 +70,7 @@ export default function page() {
       try {
         setLoading(true);
         const res = await fetch(
-          `https://www.hvcproject.com/wp-json/wp/v2/posts?slug=${id}&_embed=true`
+          `https://blog.hvcproject.com/wp-json/wp/v2/posts?slug=${id}&_embed=true`
         );
 
         if (!res.ok) {
